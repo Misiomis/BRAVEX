@@ -2,876 +2,581 @@
 <html lang="es-AR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bravex Systems — Software a medida para tu caja, tu stock y tus turnos</title>
-<meta name="description" content="Bravex Systems: paneles administrativos, catálogos conectados a tu mostrador y automatizaciones por WhatsApp que ya funcionan en comercios, clínicas y financieras. Desde Misiones para toda Argentina.">
-<meta name="theme-color" content="#0B0F17">
-<meta property="og:title" content="Bravex Systems — Software a medida, sin humo ni intermediarios">
-<meta property="og:description" content="Sistemas que ya están funcionando en negocios reales: cuentas corrientes con lectura de comprobantes por IA, catálogos multi-sucursal, turnos con seguimiento y pedidos sin comisiones.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bravex Systems — Diseño Web, Sistemas y Automatización</title>
+<meta name="description" content="Diseñamos sitios web vendedores, tiendas online y sistemas simples que ordenan tus ventas, tus turnos y tu atención por WhatsApp. Bravex Systems, Misiones, Argentina.">
+<meta name="theme-color" content="#060812">
+<meta property="og:title" content="Bravex Systems — Tecnología que hace crecer tu negocio">
+<meta property="og:description" content="Sitios web, tiendas online, sistemas de turnos y caja, y automatización por WhatsApp. Hablá directo con Braulio Veron.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%233B82F6'/%3E%3Cpath d='M10 8h7.5a4.5 4.5 0 0 1 2.6 8.2A4.8 4.8 0 0 1 18 25h-8z' fill='none' stroke='%23fff' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E">
+<meta property="og:url" content="https://misiomis.github.io/BRAVEX/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563EB'/%3E%3Cstop offset='1' stop-color='%2306B6D4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='9' fill='url(%23g)'/%3E%3Cpath d='M10 9l7 7-7 7' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16 9l7 7-7 7' fill='none' stroke='%23fff' stroke-opacity='.55' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com/3.4.16"></script>
 <script>
 tailwind.config = {
   theme: {
     extend: {
       colors: {
-        ink: '#0B0F17', card: '#111827', card2: '#0F1520', line: '#1F2937', line2: '#2B3646',
-        brand: { DEFAULT: '#3B82F6', soft: 'rgba(59,130,246,.12)', hi: '#60A5FA' },
-        ok: { DEFAULT: '#10B981', soft: 'rgba(16,185,129,.12)' },
-        warn: { DEFAULT: '#F59E0B', soft: 'rgba(245,158,11,.12)' },
-        bad: { DEFAULT: '#EF4444', soft: 'rgba(239,68,68,.12)' },
-        mut: '#9CA3AF', dim: '#6B7280'
+        night: '#060812', night2: '#0A0E1A',
+        cobalt: '#2563EB', violet: '#7C3AED', cyan: '#06B6D4', wa: '#22C55E'
       },
-      fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
-        mono: ['"JetBrains Mono"', 'ui-monospace', 'Consolas', 'monospace']
-      }
+      fontFamily: { sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'] }
     }
   }
 }
 </script>
 <style>
-  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-  body{background:#0B0F17}
-  .dot{width:8px;height:8px;border-radius:9999px;background:#10B981;flex:none;animation:pulse 2s infinite}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(16,185,129,.55)}70%{box-shadow:0 0 0 7px rgba(16,185,129,0)}100%{box-shadow:0 0 0 0 rgba(16,185,129,0)}}
-  .grid-bg{background-image:linear-gradient(#141B27 1px,transparent 1px),linear-gradient(90deg,#141B27 1px,transparent 1px);background-size:56px 56px}
-  .fade-mask{mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 30%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 30%,transparent 75%)}
-  .tab[aria-selected="true"]{background:#111827;border-color:#3B82F6;color:#fff}
-  .tab[aria-selected="true"] .tab-n{background:#3B82F6;color:#fff}
-  .opt[aria-pressed="true"]{border-color:#3B82F6;background:rgba(59,130,246,.10);color:#fff}
-  .opt[aria-pressed="true"] .opt-dot{background:#3B82F6;border-color:#3B82F6;box-shadow:inset 0 0 0 3px #111827}
-  .row-in{animation:rowin .35s ease-out}
-  @keyframes rowin{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
-  details summary::-webkit-details-marker{display:none}
-  details[open] .chev{transform:rotate(45deg)}
-  .no-scrollbar{scrollbar-width:none}.no-scrollbar::-webkit-scrollbar{display:none}
-  :focus-visible{outline:2px solid #3B82F6;outline-offset:2px;border-radius:6px}
-  @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+  /* ---------- Blindaje mobile ---------- */
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { overflow-x: hidden; max-width: 100%; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { background: #060812; word-break: normal; overflow-wrap: break-word; hyphens: manual; -webkit-tap-highlight-color: transparent; }
+  section, header, footer, main, nav, div, p, h1, h2, h3, a, button, li { overflow-wrap: break-word; word-break: normal; }
+  section, header, footer { overflow-x: hidden; }
+  img, svg { max-width: 100%; }
+
+  .t-hero { font-size: clamp(2rem, 5vw, 4rem); line-height: 1.08; letter-spacing: -0.03em; }
+  .t-sec  { font-size: clamp(2rem, 5vw, 3.25rem); line-height: 1.1; letter-spacing: -0.025em; }
+  .t-sub  { font-size: clamp(1.25rem, 3vw, 2.25rem); line-height: 1.2; letter-spacing: -0.02em; }
+  .t-card { font-size: clamp(1.2rem, 2.2vw, 1.5rem); line-height: 1.25; letter-spacing: -0.015em; }
+  .t-lead { font-size: clamp(1rem, 1.6vw, 1.2rem); line-height: 1.6; }
+
+  /* ---------- Fondo con luces ---------- */
+  .glows { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+  .glow { position: absolute; border-radius: 9999px; filter: blur(90px); opacity: .55; animation: drift 22s ease-in-out infinite alternate; }
+  .glow.g1 { width: 60vmax; height: 60vmax; left: -20vmax; top: -25vmax; background: radial-gradient(circle, rgba(37,99,235,.55), transparent 65%); }
+  .glow.g2 { width: 50vmax; height: 50vmax; right: -22vmax; top: 10vh; background: radial-gradient(circle, rgba(124,58,237,.45), transparent 65%); animation-delay: -6s; }
+  .glow.g3 { width: 45vmax; height: 45vmax; left: 10vw; bottom: -30vmax; background: radial-gradient(circle, rgba(6,182,212,.35), transparent 65%); animation-delay: -12s; }
+  @keyframes drift { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(4vw,3vh) scale(1.08); } }
+  .gridlines { position: fixed; inset: 0; z-index: -1; pointer-events: none;
+    background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+    background-size: 64px 64px; mask-image: radial-gradient(ellipse 80% 55% at 50% 0%, #000 20%, transparent 75%); -webkit-mask-image: radial-gradient(ellipse 80% 55% at 50% 0%, #000 20%, transparent 75%); }
+
+  /* ---------- Vidrio + glow ---------- */
+  .glass { background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border: 1px solid rgba(255,255,255,.09); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+  .gtext { background: linear-gradient(90deg, #60A5FA, #A78BFA 45%, #22D3EE); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .gbtn { background: linear-gradient(110deg, #2563EB, #7C3AED 55%, #06B6D4); background-size: 200% 100%; transition: background-position .5s, transform .2s, box-shadow .3s; box-shadow: 0 10px 30px -10px rgba(37,99,235,.7); position: relative; overflow: hidden; }
+  .gbtn:hover { background-position: 100% 0; box-shadow: 0 14px 40px -10px rgba(124,58,237,.8); }
+  .gbtn::after { content: ""; position: absolute; top: 0; left: -60%; width: 40%; height: 100%; background: linear-gradient(100deg, transparent, rgba(255,255,255,.35), transparent); transform: skewX(-20deg); animation: shine 3.8s ease-in-out infinite; }
+  @keyframes shine { 0%, 60% { left: -60%; } 100% { left: 130%; } }
+
+  .card { position: relative; transition: transform .35s cubic-bezier(.2,.8,.2,1), border-color .35s, box-shadow .35s; }
+  .card::before { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity .35s;
+    background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 0%), rgba(96,165,250,.16), transparent 45%); }
+  .card:hover, .card.touch { transform: translateY(-6px); border-color: rgba(96,165,250,.45); box-shadow: 0 24px 60px -24px rgba(37,99,235,.55), 0 0 0 1px rgba(124,58,237,.18); }
+  .card:hover::before, .card.touch::before { opacity: 1; }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: .6rem; min-height: 54px; padding: .85rem 1.6rem; border-radius: 14px; font-weight: 700; text-align: center; line-height: 1.25; white-space: normal; }
+
+  /* ---------- Pulso ---------- */
+  .pulse { position: relative; }
+  .pulse::before { content: ""; position: absolute; inset: -3px; border-radius: inherit; border: 2px solid rgba(96,165,250,.55); animation: ring 2.4s ease-out infinite; pointer-events: none; }
+  @keyframes ring { 0% { opacity: .9; transform: scale(1); } 100% { opacity: 0; transform: scale(1.18); } }
+  .live-dot { width: 8px; height: 8px; border-radius: 9999px; background: #22C55E; box-shadow: 0 0 0 0 rgba(34,197,94,.6); animation: dot 2s infinite; flex: none; }
+  @keyframes dot { 70% { box-shadow: 0 0 0 8px rgba(34,197,94,0); } 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); } }
+
+  /* ---------- Flotantes ---------- */
+  @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  .float { animation: float 6s ease-in-out infinite; }
+  .float.d1 { animation-delay: -1.5s; } .float.d2 { animation-delay: -3s; } .float.d3 { animation-delay: -4.5s; }
+
+  /* ---------- Hero visual ---------- */
+  .stage { position: relative; width: 100%; max-width: 540px; margin: 0 auto; aspect-ratio: 1 / .95; }
+  .monitor { position: absolute; top: 12%; right: 0; width: 86%; aspect-ratio: 16 / 11; border-radius: 18px; overflow: hidden; }
+  .phone { position: absolute; left: 1%; bottom: 0; width: 37%; aspect-ratio: 9 / 18.5; border-radius: 26px; padding: 6px; background: linear-gradient(160deg, #1E293B, #0B1020); border: 1px solid rgba(255,255,255,.14); box-shadow: 0 30px 60px -20px rgba(0,0,0,.8), 0 0 40px -10px rgba(124,58,237,.5); }
+  .phone-screen { width: 100%; height: 100%; border-radius: 21px; overflow: hidden; background: linear-gradient(180deg, #0F172A, #0B1222); display: flex; flex-direction: column; padding: 10% 8% 8%; gap: 6%; }
+  .notif { position: absolute; display: flex; align-items: center; gap: .55rem; padding: .6rem .8rem; border-radius: 14px; font-size: clamp(.68rem, 2.4vw, .85rem); line-height: 1.3; max-width: 64%; color: #fff;
+    background: rgba(15,23,42,.72); border: 1px solid rgba(255,255,255,.14); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 16px 40px -14px rgba(0,0,0,.8); }
+  .notif .ic { display: grid; place-items: center; width: 2em; height: 2em; border-radius: 10px; flex: none; font-size: 1.05em; }
+  .notif small { display: block; color: #94A3B8; font-size: .82em; font-weight: 500; }
+  .n1 { top: 0; left: 0; } .n2 { top: 44%; right: 0; } .n3 { bottom: 5%; right: 6%; }
+  .bar { flex: 1; border-radius: 4px 4px 0 0; background: linear-gradient(180deg, #22D3EE, #2563EB); transform-origin: bottom; animation: grow 2.4s cubic-bezier(.2,.8,.2,1) both; }
+  @keyframes grow { from { transform: scaleY(.1); } }
+
+  /* ---------- Proyectos: previews ---------- */
+  .pv { position: relative; height: 220px; overflow: hidden; border-radius: 18px; }
+  .scan { position: absolute; left: 8%; right: 8%; height: 2px; background: #22D3EE; box-shadow: 0 0 14px #22D3EE; animation: scanY 2.8s ease-in-out infinite; }
+  @keyframes scanY { 0% { top: 18%; opacity: 0; } 15% { opacity: 1; } 85% { opacity: 1; } 100% { top: 78%; opacity: 0; } }
+
+  /* ---------- Reveal ---------- */
+  .reveal { opacity: 0; transform: translateY(26px) scale(.98); transition: opacity .8s cubic-bezier(.2,.8,.2,1), transform .8s cubic-bezier(.2,.8,.2,1); transition-delay: var(--d, 0s); }
+  .reveal.in { opacity: 1; transform: none; }
+
+  /* ---------- Proceso ---------- */
+  .steps { position: relative; display: grid; grid-template-columns: 1fr; gap: 2rem; }
+  .steps .rail, .steps .rail-fill { position: absolute; left: 27px; top: 28px; bottom: 28px; width: 2px; border-radius: 2px; }
+  .steps .rail { background: rgba(255,255,255,.08); }
+  .steps .rail-fill { background: linear-gradient(180deg, #2563EB, #7C3AED, #06B6D4); transform: scaleY(0); transform-origin: top; transition: transform 1.6s cubic-bezier(.2,.8,.2,1); }
+  .steps.in .rail-fill { transform: scaleY(1); }
+  .step { position: relative; padding-left: 76px; }
+  .step .num { position: absolute; left: 0; top: 0; width: 56px; height: 56px; border-radius: 16px; display: grid; place-items: center; font-weight: 800; font-size: 1.1rem; color: #fff;
+    background: #0B1020; border: 1px solid rgba(255,255,255,.12); transition: background .5s, box-shadow .5s; transition-delay: var(--d, 0s); }
+  .steps.in .step .num { background: linear-gradient(135deg, #2563EB, #7C3AED); box-shadow: 0 10px 30px -8px rgba(124,58,237,.7); }
+  @media (min-width: 1024px) {
+    .steps { grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    .steps .rail, .steps .rail-fill { left: 28px; right: 28px; top: 27px; bottom: auto; width: auto; height: 2px; }
+    .steps .rail-fill { transform: scaleX(0); transform-origin: left; }
+    .steps.in .rail-fill { transform: scaleX(1); }
+    .step { padding-left: 0; padding-top: 84px; }
+  }
+
+  /* ---------- Menú móvil ---------- */
+  .burger span { display: block; width: 22px; height: 2px; border-radius: 2px; background: #fff; transition: transform .35s, opacity .25s; }
+  .burger span + span { margin-top: 5px; }
+  .burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mmenu { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .4s cubic-bezier(.2,.8,.2,1); }
+  .mmenu > div { overflow: hidden; }
+  .mmenu.open { grid-template-rows: 1fr; }
+  .mmenu a.ml { opacity: 0; transform: translateY(-8px); transition: opacity .35s, transform .35s; }
+  .mmenu.open a.ml { opacity: 1; transform: none; }
+  .mmenu.open a.ml:nth-child(2) { transition-delay: .05s; } .mmenu.open a.ml:nth-child(3) { transition-delay: .1s; }
+  .mmenu.open a.ml:nth-child(4) { transition-delay: .15s; } .mmenu.open a.ml:nth-child(5) { transition-delay: .2s; }
+
+  /* ---------- WhatsApp flotante ---------- */
+  .wa-float { position: fixed; right: 18px; bottom: calc(18px + env(safe-area-inset-bottom)); z-index: 60; width: 60px; height: 60px; border-radius: 9999px; display: grid; place-items: center; background: #22C55E; color: #fff; box-shadow: 0 14px 34px -8px rgba(34,197,94,.7); transition: transform .2s; }
+  .wa-float:hover { transform: scale(1.07); }
+  .wa-float::before, .wa-float::after { content: ""; position: absolute; inset: 0; border-radius: inherit; border: 2px solid rgba(34,197,94,.7); animation: ring 2.4s ease-out infinite; }
+  .wa-float::after { animation-delay: 1.2s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+    .reveal { opacity: 1; transform: none; }
+  }
 </style>
 </head>
-<body class="bg-ink text-gray-100 font-sans antialiased overflow-x-hidden">
+<body class="font-sans text-slate-300 antialiased">
 
-<!-- ======================= NAVBAR ======================= -->
-<header class="sticky top-0 z-50 border-b border-line bg-ink/85 backdrop-blur-md">
-  <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-4 sm:px-6" aria-label="Principal">
-    <a href="#" class="flex items-baseline gap-1.5" aria-label="Bravex Systems, inicio">
-      <span class="text-lg font-extrabold tracking-tight text-white">BRAVEX</span>
-      <span class="font-mono text-[11px] font-medium tracking-[.22em] text-brand">SYSTEMS</span>
-    </a>
-    <div class="hidden items-center gap-8 text-sm text-mut md:flex">
-      <a href="#sistemas" class="hover:text-white">Sistemas en Vivo</a>
-      <a href="#como" class="hover:text-white">Cómo Trabajamos</a>
-      <a href="#faq" class="hover:text-white">Preguntas Reales</a>
-    </div>
-    <div class="flex items-center gap-2">
-      <a data-wa="nav" href="#" target="_blank" rel="noopener" class="inline-flex h-10 items-center gap-2 rounded-lg bg-brand px-4 text-sm font-semibold text-white hover:bg-brand-hi">
-        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>
-        <span class="hidden sm:inline">Hablar con Braulio</span><span class="sm:hidden">WhatsApp</span>
+<div class="glows" aria-hidden="true"><div class="glow g1"></div><div class="glow g2"></div><div class="glow g3"></div></div>
+<div class="gridlines" aria-hidden="true"></div>
+
+<!-- ===================== NAVBAR ===================== -->
+<nav id="nav" class="fixed inset-x-0 top-0 z-50 transition-colors duration-300" aria-label="Principal">
+  <div class="mx-auto max-w-6xl px-5 pt-3">
+    <div class="glass flex h-16 items-center justify-between gap-3 rounded-2xl px-4 sm:px-5">
+      <a href="#" class="flex items-center gap-2.5" aria-label="Bravex Systems, inicio">
+        <svg width="34" height="34" viewBox="0 0 32 32" aria-hidden="true">
+          <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2563EB"/><stop offset=".55" stop-color="#7C3AED"/><stop offset="1" stop-color="#06B6D4"/></linearGradient></defs>
+          <rect width="32" height="32" rx="9" fill="url(#lg)"/>
+          <path d="M10 9l7 7-7 7" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16 9l7 7-7 7" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="flex items-baseline gap-1.5">
+          <span class="text-[1.05rem] font-extrabold tracking-tight text-white">BRAVEX</span>
+          <span class="text-[.62rem] font-semibold tracking-[.25em] text-cyan-300">SYSTEMS</span>
+        </span>
       </a>
-      <button id="menu-btn" class="grid h-10 w-10 place-items-center rounded-lg border border-line text-mut md:hidden" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
-        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-      </button>
+      <div class="hidden items-center gap-8 text-sm font-medium text-slate-300 md:flex">
+        <a href="#soluciones" class="transition hover:text-white">Soluciones</a>
+        <a href="#proyectos" class="transition hover:text-white">Proyectos</a>
+        <a href="#proceso" class="transition hover:text-white">Proceso</a>
+        <a href="#contacto" class="transition hover:text-white">Contacto</a>
+      </div>
+      <div class="flex items-center gap-2">
+        <a data-wa="nav" href="#" target="_blank" rel="noopener" class="gbtn pulse hidden h-11 items-center rounded-xl px-5 text-sm font-bold text-white sm:inline-flex">Cotizar Proyecto</a>
+        <button id="burger" class="burger grid h-11 w-11 place-items-center rounded-xl border border-white/10 md:hidden" aria-expanded="false" aria-controls="mmenu" aria-label="Abrir menú">
+          <span class="block"><span></span><span></span><span></span></span>
+        </button>
+      </div>
     </div>
-  </nav>
-  <div id="menu" class="hidden border-t border-line px-4 pb-4 md:hidden">
-    <a href="#sistemas" class="block py-3 text-mut hover:text-white">Sistemas en Vivo</a>
-    <a href="#como" class="block py-3 text-mut hover:text-white">Cómo Trabajamos</a>
-    <a href="#diagnostico" class="block py-3 text-mut hover:text-white">Diagnóstico rápido</a>
-    <a href="#faq" class="block py-3 text-mut hover:text-white">Preguntas Reales</a>
+    <div id="mmenu" class="mmenu md:hidden">
+      <div>
+        <div class="glass mt-2 flex flex-col rounded-2xl p-3">
+          <a href="#soluciones" class="ml rounded-xl px-4 py-3.5 text-base font-semibold text-white hover:bg-white/5">Soluciones</a>
+          <a href="#proyectos" class="ml rounded-xl px-4 py-3.5 text-base font-semibold text-white hover:bg-white/5">Proyectos</a>
+          <a href="#proceso" class="ml rounded-xl px-4 py-3.5 text-base font-semibold text-white hover:bg-white/5">Proceso</a>
+          <a href="#contacto" class="ml rounded-xl px-4 py-3.5 text-base font-semibold text-white hover:bg-white/5">Contacto</a>
+          <a data-wa="nav" href="#" target="_blank" rel="noopener" class="ml gbtn btn mt-2 w-full text-white">Cotizar Proyecto por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main>
+<!-- ===================== HERO ===================== -->
+<header class="relative pt-32 pb-20 sm:pt-36 lg:pb-28">
+  <div class="mx-auto grid max-w-6xl grid-cols-1 items-center gap-14 px-5 lg:grid-cols-2 lg:gap-10">
+    <div>
+      <div class="reveal inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-slate-200">
+        <span aria-hidden="true">✨</span> <span class="gtext">Diseño Web, Sistemas y Automatización</span>
+      </div>
+      <h1 class="t-hero reveal mt-6 font-extrabold text-white" style="--d:.08s">
+        Tecnología que hace crecer tu negocio y <span class="gtext">te ahorra horas</span> todos los días.
+      </h1>
+      <p class="t-lead reveal mt-6 max-w-xl text-slate-300" style="--d:.16s">
+        Diseñamos sitios web vendedores, tiendas online y sistemas simples que ordenan tus ventas, tus turnos y tu atención por WhatsApp.
+      </p>
+      <div class="reveal mt-9 flex flex-col gap-3 sm:flex-row" style="--d:.24s">
+        <a data-wa="hero" href="#" target="_blank" rel="noopener" class="gbtn btn w-full text-white sm:w-auto">
+          <svg class="h-5 w-5 flex-none" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>
+          Hablar por WhatsApp
+        </a>
+        <a href="#soluciones" class="btn w-full border border-white/15 bg-white/[.03] text-white transition hover:border-white/30 hover:bg-white/[.06] sm:w-auto">Ver qué podemos armar</a>
+      </div>
+      <ul class="reveal mt-8 flex flex-wrap gap-2.5 text-sm" style="--d:.32s" aria-label="Resultados">
+        <li class="float glass flex items-center gap-2 rounded-full px-3.5 py-2 text-slate-200"><span class="text-emerald-400">✓</span>Pedido recibido en WhatsApp</li>
+        <li class="float d1 glass flex items-center gap-2 rounded-full px-3.5 py-2 text-slate-200"><span class="text-emerald-400">✓</span>Turno confirmado automáticamente</li>
+        <li class="float d2 glass flex items-center gap-2 rounded-full px-3.5 py-2 text-slate-200"><span class="text-emerald-400">✓</span>Stock actualizado</li>
+      </ul>
+    </div>
+
+    <!-- Composición visual -->
+    <div class="reveal" style="--d:.2s" aria-hidden="true">
+      <div class="stage">
+        <!-- Pantalla -->
+        <div class="monitor glass shadow-2xl shadow-black/60">
+          <div class="flex items-center gap-1.5 border-b border-white/10 px-3 py-2.5">
+            <span class="h-2 w-2 rounded-full bg-rose-400/80"></span><span class="h-2 w-2 rounded-full bg-amber-400/80"></span><span class="h-2 w-2 rounded-full bg-emerald-400/80"></span>
+            <span class="mx-auto h-4 w-2/5 rounded-full bg-white/10"></span>
+          </div>
+          <div class="grid h-[calc(100%-33px)] grid-cols-5 gap-3 p-3 sm:p-4">
+            <div class="col-span-3 flex flex-col gap-2">
+              <span class="h-2.5 w-4/5 rounded-full bg-white/80"></span>
+              <span class="h-2.5 w-3/5 rounded-full bg-white/50"></span>
+              <span class="mt-1 h-1.5 w-full rounded-full bg-white/15"></span>
+              <span class="h-1.5 w-5/6 rounded-full bg-white/15"></span>
+              <span class="mt-2 h-5 w-2/5 rounded-lg bg-gradient-to-r from-cobalt to-violet"></span>
+              <div class="mt-auto flex h-2/5 items-end gap-1.5 rounded-xl border border-white/10 bg-white/[.03] p-2">
+                <span class="bar" style="height:35%;animation-delay:.2s"></span><span class="bar" style="height:55%;animation-delay:.3s"></span><span class="bar" style="height:45%;animation-delay:.4s"></span><span class="bar" style="height:70%;animation-delay:.5s"></span><span class="bar" style="height:62%;animation-delay:.6s"></span><span class="bar" style="height:90%;animation-delay:.7s"></span>
+              </div>
+            </div>
+            <div class="col-span-2 flex flex-col gap-2">
+              <div class="flex-1 rounded-xl bg-gradient-to-br from-violet/70 via-cobalt/60 to-cyan/60"></div>
+              <div class="grid grid-cols-2 gap-2"><span class="aspect-square rounded-lg bg-white/10"></span><span class="aspect-square rounded-lg bg-white/10"></span></div>
+            </div>
+          </div>
+        </div>
+        <!-- Celular -->
+        <div class="phone float d2">
+          <div class="phone-screen">
+            <div class="flex items-center justify-between"><span class="h-2 w-1/2 rounded-full bg-white/80"></span><span class="h-4 w-4 rounded-full bg-gradient-to-br from-cobalt to-cyan"></span></div>
+            <span class="h-5 w-full rounded-lg bg-white/10"></span>
+            <div class="grid flex-1 grid-cols-2 gap-[6%]">
+              <span class="rounded-lg bg-gradient-to-br from-cyan/60 to-cobalt/60"></span>
+              <span class="rounded-lg bg-gradient-to-br from-violet/60 to-cobalt/50"></span>
+              <span class="rounded-lg bg-gradient-to-br from-cobalt/60 to-violet/50"></span>
+              <span class="rounded-lg bg-gradient-to-br from-cyan/50 to-violet/50"></span>
+            </div>
+            <span class="grid h-[11%] place-items-center rounded-lg bg-wa"><span class="h-1.5 w-1/2 rounded-full bg-white/90"></span></span>
+          </div>
+        </div>
+        <!-- Notificaciones -->
+        <div class="notif n1 float"><span class="ic bg-emerald-500/20">🛒</span><span><b class="font-bold">Nueva venta online</b><small>$48.500 · recién</small></span></div>
+        <div class="notif n2 float d1"><span class="ic bg-violet-500/25">📅</span><span><b class="font-bold">Turno agendado</b><small>Hoy a las 17:00 hs</small></span></div>
+        <div class="notif n3 float d3"><span class="ic bg-cyan-500/20">⚡</span><span><b class="font-bold">Comprobante verificado</b><small>Acreditado sin cargarlo a mano</small></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Números -->
+  <div class="mx-auto mt-20 max-w-6xl px-5">
+    <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="reveal glass card rounded-2xl p-5" style="--d:0s"><p class="text-3xl font-extrabold text-white"><span class="count" data-to="3">0</span></p><p class="mt-1 text-sm text-slate-400">farmacias vendiendo desde un mismo catálogo</p></div>
+      <div class="reveal glass card rounded-2xl p-5" style="--d:.08s"><p class="text-3xl font-extrabold text-white"><span class="count" data-to="24">0</span> hs</p><p class="mt-1 text-sm text-slate-400">de respuestas automáticas en WhatsApp</p></div>
+      <div class="reveal glass card rounded-2xl p-5" style="--d:.16s"><p class="text-3xl font-extrabold text-white"><span class="count" data-to="1">0</span> clic</p><p class="mt-1 text-sm text-slate-400">para cerrar la caja del día</p></div>
+      <div class="reveal glass card rounded-2xl p-5" style="--d:.24s"><p class="text-3xl font-extrabold text-white"><span class="count" data-to="100">0</span>%</p><p class="mt-1 text-sm text-slate-400">pensado para usarse desde el celular</p></div>
+    </div>
   </div>
 </header>
 
-<main>
-<!-- ======================= HERO ======================= -->
-<section class="relative overflow-hidden">
-  <div class="grid-bg fade-mask pointer-events-none absolute inset-0" aria-hidden="true"></div>
-  <div class="relative mx-auto max-w-6xl px-4 pb-20 pt-16 sm:px-6 sm:pt-24">
-    <div class="inline-flex items-center gap-2 rounded-full border border-ok/30 bg-ok-soft px-3 py-1.5 font-mono text-xs text-ok">
-      <span class="dot"></span> Sistemas corriendo hoy en negocios reales
-    </div>
-    <h1 class="mt-6 max-w-4xl text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
-      Software a medida que ordena tu caja, tu stock y tus turnos. <span class="text-mut">Sin humo ni intermediarios.</span>
-    </h1>
-    <p class="mt-6 max-w-2xl text-lg leading-relaxed text-mut">
-      En Bravex Systems no vendemos plantillas genéricas ni promesas en lista de espera. Desarrollamos paneles administrativos, catálogos conectados a tu mostrador y automatizaciones por WhatsApp que ya están funcionando todos los días en comercios, clínicas y financieras.
-    </p>
-    <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-      <a data-wa="hero" href="#" target="_blank" rel="noopener" class="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-ok px-6 font-semibold text-[#04150F] hover:brightness-110">
-        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>
-        WhatsApp: +54 9 3757 67-1229
-      </a>
-      <a href="#sistemas" class="inline-flex h-12 items-center justify-center rounded-lg border border-line2 px-6 font-semibold text-white hover:border-brand">Ver los 4 sistemas por dentro ↓</a>
+<!-- ===================== SOLUCIONES ===================== -->
+<section id="soluciones" class="scroll-mt-24 py-20 sm:py-28">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="reveal max-w-2xl">
+      <p class="text-sm font-bold uppercase tracking-[.2em] text-cyan-300">Soluciones</p>
+      <h2 class="t-sec mt-3 font-extrabold text-white">Qué hacemos por tu negocio</h2>
+      <p class="t-lead mt-4 text-slate-400">Elegí lo que necesitás hoy. Si no sabés por dónde empezar, escribime y lo vemos juntos.</p>
     </div>
 
-    <dl class="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-line bg-line lg:grid-cols-4">
-      <div class="bg-card2 p-5"><dt class="text-sm text-mut">Sistemas en producción</dt><dd class="mt-1 font-mono text-2xl font-bold text-white">4</dd></div>
-      <div class="bg-card2 p-5"><dt class="text-sm text-mut">Pruebas automatizadas en cuentas</dt><dd class="mt-1 font-mono text-2xl font-bold text-white">220+</dd></div>
-      <div class="bg-card2 p-5"><dt class="text-sm text-mut">Sucursales en un solo catálogo</dt><dd class="mt-1 font-mono text-2xl font-bold text-white">3</dd></div>
-      <div class="bg-card2 p-5"><dt class="text-sm text-mut">Comisión por venta o turno</dt><dd class="mt-1 font-mono text-2xl font-bold text-ok">$0</dd></div>
-    </dl>
-  </div>
-</section>
-
-<!-- ======================= SISTEMAS EN VIVO ======================= -->
-<section id="sistemas" class="scroll-mt-16 border-t border-line py-20">
-  <div class="mx-auto max-w-6xl px-4 sm:px-6">
-    <p class="font-mono text-xs uppercase tracking-[.18em] text-brand">Sistemas en vivo</p>
-    <h2 class="mt-3 max-w-3xl text-3xl font-extrabold tracking-tight text-white sm:text-4xl">Esto es lo que ya está armado y funcionando.</h2>
-    <p class="mt-4 max-w-2xl text-mut">Cuatro sistemas que usan negocios reales todos los días. Tocá cada pestaña para ver cómo se ve el panel por dentro. Los datos de las vistas son de ejemplo; el funcionamiento es el real.</p>
-
-    <div class="no-scrollbar -mx-4 mt-10 flex gap-2 overflow-x-auto px-4 sm:mx-0 sm:grid sm:grid-cols-2 sm:px-0 lg:grid-cols-4" role="tablist" aria-label="Sistemas">
-      <button class="tab flex min-w-[230px] items-center gap-3 rounded-xl border border-line bg-card2 p-4 text-left text-mut transition sm:min-w-0" role="tab" aria-selected="true" aria-controls="p1" data-tab="1">
-        <span class="tab-n grid h-8 w-8 flex-none place-items-center rounded-lg bg-line font-mono text-sm font-bold">1</span>
-        <span class="text-sm font-semibold leading-tight">Cuentas y Comprobantes IA</span>
-      </button>
-      <button class="tab flex min-w-[230px] items-center gap-3 rounded-xl border border-line bg-card2 p-4 text-left text-mut transition sm:min-w-0" role="tab" aria-selected="false" aria-controls="p2" data-tab="2">
-        <span class="tab-n grid h-8 w-8 flex-none place-items-center rounded-lg bg-line font-mono text-sm font-bold">2</span>
-        <span class="text-sm font-semibold leading-tight">Multi-Sucursal & POS</span>
-      </button>
-      <button class="tab flex min-w-[230px] items-center gap-3 rounded-xl border border-line bg-card2 p-4 text-left text-mut transition sm:min-w-0" role="tab" aria-selected="false" aria-controls="p3" data-tab="3">
-        <span class="tab-n grid h-8 w-8 flex-none place-items-center rounded-lg bg-line font-mono text-sm font-bold">3</span>
-        <span class="text-sm font-semibold leading-tight">Turnos, Seguimiento y Caja</span>
-      </button>
-      <button class="tab flex min-w-[230px] items-center gap-3 rounded-xl border border-line bg-card2 p-4 text-left text-mut transition sm:min-w-0" role="tab" aria-selected="false" aria-controls="p4" data-tab="4">
-        <span class="tab-n grid h-8 w-8 flex-none place-items-center rounded-lg bg-line font-mono text-sm font-bold">4</span>
-        <span class="text-sm font-semibold leading-tight">Pedidos y Reservas</span>
-      </button>
-    </div>
-
-    <!-- ========== PANEL 1: CUENTAS ========== -->
-    <div id="p1" class="panel mt-6 grid gap-6 lg:grid-cols-[1fr_1.25fr]" role="tabpanel">
-      <div class="rounded-2xl border border-line bg-card p-6 sm:p-8">
-        <div class="flex flex-wrap items-center gap-3">
-          <span class="inline-flex items-center gap-2 rounded-full border border-ok/30 bg-ok-soft px-2.5 py-1 font-mono text-[11px] text-ok"><span class="dot"></span>EN PRODUCCIÓN</span>
-          <span class="text-sm text-mut">Caso real: <b class="text-white">Melki</b></span>
+    <div class="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2">
+      <!-- 1 -->
+      <article class="reveal glass card flex flex-col rounded-3xl p-7 sm:p-8" style="--d:0s">
+        <div class="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-cobalt to-cyan shadow-lg shadow-cobalt/40">
+          <svg class="h-7 w-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M7 8h6M7 11h4"/></svg>
         </div>
-        <h3 class="mt-4 text-2xl font-bold text-white">Cuentas corrientes, multimoneda y auditoría de comprobantes</h3>
-        <p class="mt-4 text-sm font-semibold uppercase tracking-wide text-dim">Qué te saca de encima</p>
-        <p class="mt-2 text-mut">Anotar pagos a mano o en Excel cuando entran decenas de transferencias por día. Comprobantes repetidos, saldos cruzados entre clientes y proveedores, y diferencias de cambio que no cierran.</p>
-        <p class="mt-6 text-sm font-semibold uppercase tracking-wide text-dim">Qué hace hoy</p>
-        <ul class="mt-3 space-y-3 text-[15px] text-gray-200">
-          <li class="flex gap-3"><span class="mt-1 text-ok">✓</span>Cuentas corrientes separadas en pesos (efectivo y transferencia), dólares, USDT y otras divisas.</li>
-          <li class="flex gap-3"><span class="mt-1 text-ok">✓</span>Respeta la cotización histórica de cada operación: cambiar el precio del día no rompe los saldos anteriores.</li>
-          <li class="flex gap-3"><span class="mt-1 text-ok">✓</span>Lee la foto o PDF del comprobante que entra por WhatsApp: monto, fecha, banco, destinatario e ID de operación. Si está duplicado, avisa antes de acreditar.</li>
-          <li class="flex gap-3"><span class="mt-1 text-ok">✓</span>Estados claros (<i>Recibido</i>, <i>Asignado</i>, <i>Confirmado</i>) para que nada impacte dos veces en la caja. Los excedentes se acumulan hasta que el administrador los cierra.</li>
-          <li class="flex gap-3"><span class="mt-1 text-ok">✓</span>Resumen de cuenta en PDF con un clic, listo para mandar al cliente.</li>
-          <li class="flex gap-3"><span class="mt-1 text-ok">✓</span>Más de 220 pruebas automatizadas (166 unitarias + 59 de integración) que verifican que las cuentas no fallen.</li>
-        </ul>
-        <a data-wa="s1" href="#" target="_blank" rel="noopener" class="mt-8 inline-flex h-12 w-full items-center justify-center rounded-lg bg-brand px-6 font-semibold text-white hover:bg-brand-hi sm:w-auto">Quiero algo así para mi negocio</a>
-      </div>
-
-      <!-- mockup 1 -->
-      <div class="overflow-hidden rounded-2xl border border-line2 bg-card shadow-2xl shadow-black/40">
-        <div class="flex items-center justify-between border-b border-line bg-card2 px-4 py-3">
-          <div class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-line2"></span><span class="h-2.5 w-2.5 rounded-full bg-line2"></span><span class="h-2.5 w-2.5 rounded-full bg-line2"></span><span class="ml-2 font-mono text-xs text-dim">panel / cuentas / comercial-norte</span></div>
-          <span class="rounded border border-line2 px-1.5 py-0.5 font-mono text-[10px] text-dim">DATOS DE EJEMPLO</span>
-        </div>
-        <div class="grid grid-cols-2 gap-px bg-line sm:grid-cols-4">
-          <div class="bg-card p-3"><p class="font-mono text-[10px] tracking-wider text-dim">ARS EFECTIVO</p><p class="font-mono text-sm font-semibold text-white">$ 1.240.000</p></div>
-          <div class="bg-card p-3"><p class="font-mono text-[10px] tracking-wider text-dim">ARS TRANSF.</p><p id="bal-tr" class="font-mono text-sm font-semibold text-white transition-colors">$ 3.875.500</p></div>
-          <div class="bg-card p-3"><p class="font-mono text-[10px] tracking-wider text-dim">USD</p><p class="font-mono text-sm font-semibold text-white">US$ 2.150</p></div>
-          <div class="bg-card p-3"><p class="font-mono text-[10px] tracking-wider text-dim">USDT</p><p class="font-mono text-sm font-semibold text-white">₮ 980</p></div>
-        </div>
-
-        <div class="p-4">
-          <div class="flex items-center justify-between">
-            <p class="text-sm font-semibold text-white">Comprobantes de hoy</p>
-            <button id="sim-btn" class="rounded-md border border-line2 px-2.5 py-1 font-mono text-[11px] text-mut hover:border-brand hover:text-white">+ Simular comprobante nuevo</button>
-          </div>
-          <div id="vouchers" class="mt-3 space-y-2">
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-1 rounded-lg border border-line bg-card2 px-3 py-2.5">
-              <span class="font-mono text-xs text-dim">10:42</span>
-              <span class="font-mono text-sm text-white">$ 450.000</span>
-              <span class="font-mono text-xs text-dim">ID 000981223</span>
-              <span class="ml-auto rounded-full bg-ok-soft px-2 py-0.5 font-mono text-[11px] text-ok">Confirmado</span>
-            </div>
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-1 rounded-lg border border-line bg-card2 px-3 py-2.5">
-              <span class="font-mono text-xs text-dim">11:15</span>
-              <span class="font-mono text-sm text-white">$ 1.200.000</span>
-              <span class="font-mono text-xs text-dim">ID 000981877</span>
-              <span class="ml-auto rounded-full bg-brand-soft px-2 py-0.5 font-mono text-[11px] text-brand-hi">Asignado</span>
-            </div>
-            <div class="rounded-lg border border-bad/40 bg-bad-soft px-3 py-2.5">
-              <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
-                <span class="font-mono text-xs text-dim">11:58</span>
-                <span class="font-mono text-sm text-white">$ 450.000</span>
-                <span class="font-mono text-xs text-dim">ID 000981223</span>
-                <span class="ml-auto rounded-full bg-bad/20 px-2 py-0.5 font-mono text-[11px] text-bad">Duplicado</span>
-              </div>
-              <p class="mt-1.5 text-xs text-red-300">Mismo ID que el comprobante de las 10:42. No se acredita hasta que lo revises.</p>
-            </div>
-          </div>
-
-          <div id="ai-card" class="mt-4 rounded-lg border border-brand/30 bg-brand-soft p-3">
-            <div class="flex items-center justify-between">
-              <p class="font-mono text-[11px] tracking-wider text-brand-hi">COMPROBANTE LEÍDO POR IA</p>
-              <span id="ai-state" class="rounded-full bg-ok-soft px-2 py-0.5 font-mono text-[11px] text-ok">✓ Verificado</span>
-            </div>
-            <dl class="mt-2 grid grid-cols-2 gap-x-4 gap-y-1 font-mono text-xs sm:grid-cols-3">
-              <div><dt class="text-dim">Monto</dt><dd id="ai-monto" class="text-white">$ 1.200.000,00</dd></div>
-              <div><dt class="text-dim">Fecha</dt><dd id="ai-fecha" class="text-white">06/11 11:15</dd></div>
-              <div><dt class="text-dim">Banco</dt><dd id="ai-banco" class="text-white">Banco ••• 4471</dd></div>
-              <div><dt class="text-dim">Destinatario</dt><dd class="text-white">Cuenta propia ✓</dd></div>
-              <div class="col-span-2"><dt class="text-dim">ID operación</dt><dd id="ai-id" class="text-white">000981877 · único</dd></div>
-            </dl>
-          </div>
-
-          <div class="mt-4 grid gap-2 sm:grid-cols-2">
-            <div class="rounded-lg border border-warn/30 bg-warn-soft p-3">
-              <p class="font-mono text-[11px] tracking-wider text-warn">EXCEDENTE ACUMULADO</p>
-              <p class="font-mono text-sm text-white">$ 18.500</p>
-              <p class="text-xs text-mut">Pendiente de cierre por el administrador</p>
-            </div>
-            <div class="rounded-lg border border-line bg-card2 p-3">
-              <p class="font-mono text-[11px] tracking-wider text-dim">COTIZACIÓN USD</p>
-              <p class="text-xs text-mut">Guardada por operación. Cambiar la del día no modifica saldos anteriores.</p>
-            </div>
-          </div>
-
-          <div class="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-line pt-4">
-            <span class="font-mono text-[11px] text-ok">● 225 pruebas OK · 166 unitarias + 59 integración</span>
-            <button id="pdf-btn" class="rounded-md bg-white px-3 py-1.5 text-xs font-semibold text-ink hover:bg-gray-200">Generar resumen PDF</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ========== PANEL 2: MULTI-SUCURSAL ========== -->
-    <div id="p2" class="panel mt-6 hidden gap-6 lg:grid-cols-[1fr_1.25fr]" role="tabpanel">
-      <div class="rounded-2xl border border-line bg-card p-6 sm:p-8">
-        <div class="flex flex-wrap items-center gap-3">
-          <span class="inline-flex items-center gap-2 rounded-full border border-ok/30 bg-ok-soft px-2.5 py-1 font-mono text-[11px] text-ok"><span class="dot"></span>EN PRODUCCIÓN</span>
-          <span class="text-sm text-mut">Caso real: <b class="text-white">Red Farmako</b></span>
-        </div>
-        <h3 class="mt-4 text-2xl font-bold text-white">Catálogo web multi-sucursal conectado al mostrador</h3>
-        <p class="mt-4 text-sm font-semibold uppercase tracking-wide text-dim">Qué te saca de encima</p>
-        <p class="mt-2 text-mut">Tener varias sucursales (Farmacia Central, Farmacia Libertad y Farmavida) y que la gente pregunte todo el día por WhatsApp si hay stock o qué local está de turno. Y cargar los precios dos veces.</p>
-        <p class="mt-6 text-sm font-semibold uppercase tracking-wide text-dim">Qué hace hoy</p>
-        <ul class="mt-3 space-y-3 text-[15px] text-gray-200">
-          <li class="flex gap-3"><span class="mt-1 text-ok">✓</span>Unifica el catálogo online de todas las sucursales, conectado a la base del sistema de facturación y stock del local (integración con Plex25).</li>
-          <li class="flex gap-3"><span class="mt-1 text-ok">✓</span>Separa rubros y stock según lo que vende cada sucursal.</li>
-          <li class="flex gap-3"><span class="mt-1 text-ok">✓</span>El cliente arma el pedido en la web y el carrito llega armado al WhatsApp de la sucursal que corresponde, listo para cobrar y despachar.</li>
-          <li class="flex gap-3"><span class="mt-1 text-ok">✓</span>Panel administrativo protegido por PIN.</li>
-          <li class="flex gap-3"><span class="mt-1 text-ok">✓</span>Cartelera automática de sucursales de turno.</li>
-        </ul>
-        <a data-wa="s2" href="#" target="_blank" rel="noopener" class="mt-8 inline-flex h-12 w-full items-center justify-center rounded-lg bg-brand px-6 font-semibold text-white hover:bg-brand-hi sm:w-auto">Quiero algo así para mi negocio</a>
-      </div>
-
-      <!-- mockup 2 -->
-      <div class="overflow-hidden rounded-2xl border border-line2 bg-card shadow-2xl shadow-black/40">
-        <div class="flex items-center justify-between border-b border-line bg-card2 px-4 py-3">
-          <div class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-line2"></span><span class="h-2.5 w-2.5 rounded-full bg-line2"></span><span class="h-2.5 w-2.5 rounded-full bg-line2"></span><span class="ml-2 font-mono text-xs text-dim">catalogo / red-de-farmacias</span></div>
-          <span class="rounded border border-line2 px-1.5 py-0.5 font-mono text-[10px] text-dim">DATOS DE EJEMPLO</span>
-        </div>
-        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-line bg-ok-soft px-4 py-2.5">
-          <span class="text-sm text-white">🏥 De turno hoy: <b>Farmavida</b> <span class="text-mut">· hasta las 8:00</span></span>
-          <span class="font-mono text-[11px] text-ok">● Sincronizado con Plex25</span>
-        </div>
-        <div class="p-4">
-          <input id="cat-search" type="search" placeholder="Buscar producto…" class="h-10 w-full rounded-lg border border-line2 bg-card2 px-3 text-sm text-white placeholder:text-dim focus:border-brand focus:outline-none" aria-label="Buscar producto">
-          <div class="mt-3 hidden grid-cols-[1fr_repeat(3,64px)] gap-2 px-3 font-mono text-[10px] tracking-wider text-dim sm:grid">
-            <span>PRODUCTO</span><span class="text-center">CENTRAL</span><span class="text-center">LIBERTAD</span><span class="text-center">FARMAVIDA</span>
-          </div>
-          <div id="cat-list" class="mt-2 space-y-2"></div>
-
-          <div class="mt-4 rounded-lg border border-line bg-card2 p-3">
-            <div class="flex flex-wrap items-center justify-between gap-2">
-              <p class="text-sm font-semibold text-white">Carrito <span id="cart-count" class="font-mono text-xs text-mut">(0)</span></p>
-              <label class="flex items-center gap-2 text-xs text-mut">Enviar a
-                <select id="cart-branch" class="h-8 rounded-md border border-line2 bg-card px-2 text-xs text-white">
-                  <option>Farmacia Central</option><option selected>Farmacia Libertad</option><option>Farmavida</option>
-                </select>
-              </label>
-            </div>
-            <div class="mt-3 rounded-lg bg-[#0B141A] p-3">
-              <p class="font-mono text-[10px] tracking-wider text-dim">VISTA PREVIA · WHATSAPP <span id="wa-branch">FARMACIA LIBERTAD</span></p>
-              <div id="cart-preview" class="mt-2 max-w-[90%] whitespace-pre-line rounded-lg rounded-tl-none bg-[#005C4B] px-3 py-2 font-mono text-xs leading-relaxed text-white">Agregá productos con “+” para ver cómo llega el pedido.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ========== PANEL 3: TURNOS ========== -->
-    <div id="p3" class="panel mt-6 hidden gap-6 lg:grid-cols-[1fr_1.25fr]" role="tabpanel">
-      <div class="rounded-2xl border border-line bg-card p-6 sm:p-8">
-        <div class="flex flex-wrap items-center gap-3">
-          <span class="inline-flex items-center gap-2 rounded-full border border-ok/30 bg-ok-soft px-2.5 py-1 font-mono text-[11px] text-ok"><span class="dot"></span>EN PRODUCCIÓN</span>
-          <span class="text-sm text-mut">Casos reales: <b class="text-white">Espacio Mimar T</b> / <b class="text-white">Distrito Barber</b></span>
-        </div>
-        <h3 class="mt-4 text-2xl font-bold text-white">Gestión de consultorios, seguimiento de pacientes y caja diaria</h3>
-        <p class="mt-4 text-sm font-semibold uppercase tracking-wide text-dim">Qué te saca de encima</p>
-        <p class="mt-2 text-mut">Agendas cerradas donde no sabés qué se hizo el paciente la última vez. Clientas que se olvidan de volver a los 15 o 20 días. Cierres de caja donde no queda claro cuánto le toca a cada profesional.</p>
-        <p class="mt-6 text-sm font-semibold uppercase tracking-wide text-dim">Qué hace hoy</p>
-        <ul class="mt-3 space-y-3 text-[15px] text-gray-200">
-          <li class="flex gap-3"><span class="mt-1 text-ok">✓</span>Agenda clara: tocás un turno y ves el historial completo de la persona y el tratamiento de su última visita.</li>
-          <li class="flex gap-3"><span class="mt-1 text-ok">✓</span>Avisos automáticos de seguimiento: detecta cuándo pasaron 15 o 20 días desde la última atención y genera la alerta para escribirle por WhatsApp y agendar la próxima sesión.</li>
-          <li class="flex gap-3"><span class="mt-1 text-ok">✓</span>Carga rápida de notas, incluso por dictado de voz.</li>
-          <li class="flex gap-3"><span class="mt-1 text-ok">✓</span>Cálculo automático de porcentajes y comisiones por profesional.</li>
-          <li class="flex gap-3"><span class="mt-1 text-ok">✓</span>Cierre de caja diario, detallado día por día.</li>
-        </ul>
-        <a data-wa="s3" href="#" target="_blank" rel="noopener" class="mt-8 inline-flex h-12 w-full items-center justify-center rounded-lg bg-brand px-6 font-semibold text-white hover:bg-brand-hi sm:w-auto">Quiero algo así para mi negocio</a>
-      </div>
-
-      <!-- mockup 3 -->
-      <div class="overflow-hidden rounded-2xl border border-line2 bg-card shadow-2xl shadow-black/40">
-        <div class="flex items-center justify-between border-b border-line bg-card2 px-4 py-3">
-          <div class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-line2"></span><span class="h-2.5 w-2.5 rounded-full bg-line2"></span><span class="h-2.5 w-2.5 rounded-full bg-line2"></span><span class="ml-2 font-mono text-xs text-dim">panel / agenda / hoy</span></div>
-          <span class="rounded border border-line2 px-1.5 py-0.5 font-mono text-[10px] text-dim">DATOS DE EJEMPLO</span>
-        </div>
-        <div class="p-4">
-          <div class="rounded-lg border border-warn/40 bg-warn-soft p-3">
-            <div class="flex flex-wrap items-center justify-between gap-2">
-              <p class="text-sm text-white">⏰ Pasaron <b>18 días</b> desde la última sesión de <b>Paula</b></p>
-              <button id="remind-btn" class="rounded-md bg-ok px-3 py-1.5 text-xs font-semibold text-[#04150F] hover:brightness-110">Enviar recordatorio</button>
-            </div>
-            <p id="remind-msg" class="mt-1 text-xs text-mut">Limpieza facial profunda · le corresponde la segunda sesión</p>
-          </div>
-          <div class="mt-2 rounded-lg border border-line bg-card2 p-3 text-sm text-mut">⏰ Pasaron <b class="text-white">15 días</b> desde el peeling de <b class="text-white">Camila</b></div>
-
-          <div class="mt-4 grid gap-4 sm:grid-cols-[1fr_1fr]">
-            <div>
-              <p class="mb-2 font-mono text-[10px] tracking-wider text-dim">TURNOS DE HOY · tocá uno</p>
-              <div id="agenda" class="space-y-1.5"></div>
-            </div>
-            <div id="history" class="rounded-lg border border-brand/30 bg-brand-soft p-3"></div>
-          </div>
-
-          <div class="mt-4 rounded-lg border border-line bg-card2 p-3">
-            <div class="flex items-center justify-between">
-              <p class="text-sm font-semibold text-white">Cierre de caja · hoy</p>
-              <p class="font-mono text-sm font-semibold text-white">$ 486.000</p>
-            </div>
-            <div class="mt-2 grid grid-cols-2 gap-x-4 gap-y-1 font-mono text-xs">
-              <span class="text-dim">Efectivo</span><span class="text-right text-gray-200">$ 156.000</span>
-              <span class="text-dim">Transferencia</span><span class="text-right text-gray-200">$ 330.000</span>
-            </div>
-            <div class="mt-3 space-y-1.5 border-t border-line pt-3 font-mono text-xs">
-              <div class="flex justify-between"><span class="text-mut">Lic. Sofía · 40% de $ 210.000</span><span class="text-white">$ 84.000</span></div>
-              <div class="flex justify-between"><span class="text-mut">Lic. Carla · 40% de $ 276.000</span><span class="text-white">$ 110.400</span></div>
-              <div class="flex justify-between border-t border-line pt-1.5"><span class="text-mut">Queda para el local</span><span class="text-ok">$ 291.600</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ========== PANEL 4: PEDIDOS / RESERVAS ========== -->
-    <div id="p4" class="panel mt-6 hidden gap-6 lg:grid-cols-[1fr_1.25fr]" role="tabpanel">
-      <div class="rounded-2xl border border-line bg-card p-6 sm:p-8">
-        <div class="flex flex-wrap items-center gap-3">
-          <span class="inline-flex items-center gap-2 rounded-full border border-ok/30 bg-ok-soft px-2.5 py-1 font-mono text-[11px] text-ok"><span class="dot"></span>EN PRODUCCIÓN</span>
-          <span class="text-sm text-mut">Casos reales: <b class="text-white">Central Variedades</b> / <b class="text-white">Dridanna</b></span>
-        </div>
-        <h3 class="mt-4 text-2xl font-bold text-white">Pedidos gastronómicos y alquileres por fecha</h3>
-        <p class="mt-4 text-sm font-semibold uppercase tracking-wide text-dim">Qué te saca de encima</p>
-        <p class="mt-2 text-mut">Pedidos que se pierden en el WhatsApp, el mismo equipo reservado dos veces para el mismo día, y plataformas que se quedan con un porcentaje de cada venta.</p>
-        <p class="mt-6 text-sm font-semibold uppercase tracking-wide text-dim">Qué hace hoy</p>
-        <ul class="mt-3 space-y-3 text-[15px] text-gray-200">
-          <li class="flex gap-3"><span class="mt-1 text-ok">✓</span>Recepción ordenada de pedidos para locales de comida y food trucks.</li>
-          <li class="flex gap-3"><span class="mt-1 text-ok">✓</span>Reserva de equipos o inflables por fecha y horario, sin superposiciones.</li>
-          <li class="flex gap-3"><span class="mt-1 text-ok">✓</span>Cobros integrados.</li>
-          <li class="flex gap-3"><span class="mt-1 text-ok">✓</span>Sin pagar comisiones por venta a plataformas externas.</li>
-        </ul>
-        <a data-wa="s4" href="#" target="_blank" rel="noopener" class="mt-8 inline-flex h-12 w-full items-center justify-center rounded-lg bg-brand px-6 font-semibold text-white hover:bg-brand-hi sm:w-auto">Quiero algo así para mi negocio</a>
-      </div>
-
-      <!-- mockup 4 -->
-      <div class="overflow-hidden rounded-2xl border border-line2 bg-card shadow-2xl shadow-black/40">
-        <div class="flex items-center justify-between border-b border-line bg-card2 px-4 py-3">
-          <div class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-line2"></span><span class="h-2.5 w-2.5 rounded-full bg-line2"></span><span class="h-2.5 w-2.5 rounded-full bg-line2"></span><span class="ml-2 font-mono text-xs text-dim">panel / pedidos-y-reservas</span></div>
-          <span class="rounded border border-line2 px-1.5 py-0.5 font-mono text-[10px] text-dim">DATOS DE EJEMPLO</span>
-        </div>
-        <div class="p-4">
-          <div class="flex items-center justify-between">
-            <p class="text-sm font-semibold text-white">Pedidos de hoy</p>
-            <span class="font-mono text-[11px] text-ok">Comisión de plataforma: $ 0</span>
-          </div>
-          <div id="orders" class="mt-3 space-y-2"></div>
-
-          <div class="mt-5 flex flex-wrap items-center justify-between gap-2">
-            <p class="text-sm font-semibold text-white">Castillo inflable grande</p>
-            <p class="font-mono text-[11px] text-dim">tocá un día libre para reservar</p>
-          </div>
-          <div id="calendar" class="mt-3 grid grid-cols-7 gap-1.5"></div>
-          <div class="mt-3 flex flex-wrap gap-4 font-mono text-[11px] text-mut">
-            <span class="flex items-center gap-1.5"><span class="h-2.5 w-2.5 rounded-sm bg-ok"></span>Libre</span>
-            <span class="flex items-center gap-1.5"><span class="h-2.5 w-2.5 rounded-sm bg-brand"></span>Reservado · seña cobrada</span>
-          </div>
-          <p id="cal-msg" class="mt-3 min-h-[1.25rem] text-xs text-mut"></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ======================= CÓMO TRABAJAMOS ======================= -->
-<section id="como" class="scroll-mt-16 border-t border-line py-20">
-  <div class="mx-auto max-w-6xl px-4 sm:px-6">
-    <p class="font-mono text-xs uppercase tracking-[.18em] text-brand">Cómo trabajamos</p>
-    <h2 class="mt-3 max-w-3xl text-3xl font-extrabold tracking-tight text-white sm:text-4xl">Por qué trabajar directo con Bravex Systems</h2>
-
-    <div class="mt-10 grid gap-4 md:grid-cols-3">
-      <article class="rounded-2xl border border-line bg-card p-6">
-        <span class="font-mono text-sm text-brand">01</span>
-        <h3 class="mt-3 text-lg font-bold text-white">Trato directo con quien escribe el código</h3>
-        <p class="mt-3 text-mut">Hablás por WhatsApp directamente conmigo, Braulio Veron. Sin vendedores que te prometen cosas que después no se pueden programar, y sin sistemas de tickets que tardan una semana en responder.</p>
+        <h3 class="t-card mt-6 font-bold text-white">Diseño Web & Landing Pages</h3>
+        <p class="mt-3 flex-1 text-slate-400">Páginas rápidas, modernas y adaptadas a celulares para que tu negocio se vea profesional y convierta visitas en consultas reales.</p>
+        <a data-wa="sol1" href="#" target="_blank" rel="noopener" class="mt-6 inline-flex items-center gap-2 font-bold text-cyan-300 transition hover:gap-3 hover:text-white">Consultar por esto <span aria-hidden="true">→</span></a>
       </article>
-      <article class="rounded-2xl border border-line bg-card p-6">
-        <span class="font-mono text-sm text-brand">02</span>
-        <h3 class="mt-3 text-lg font-bold text-white">Adaptado a tu forma real de trabajar</h3>
-        <p class="mt-3 text-mut">Si ya usás un sistema en el mostrador (como Plex), planillas propias o un flujo de caja específico, conectamos el software nuevo a lo que ya tenés. No te obligamos a cambiar todo tu negocio.</p>
+      <!-- 2 -->
+      <article class="reveal glass card flex flex-col rounded-3xl p-7 sm:p-8" style="--d:.08s">
+        <div class="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-violet to-cobalt shadow-lg shadow-violet/40">
+          <svg class="h-7 w-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 11a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        </div>
+        <h3 class="t-card mt-6 font-bold text-white">Tiendas Online & Catálogos Multi&#8209;Sucursal</h3>
+        <p class="mt-3 flex-1 text-slate-400">Mostrá tus productos con precios y stock al día. Tus clientes arman el carrito y el pedido llega listo a tu WhatsApp.</p>
+        <a data-wa="sol2" href="#" target="_blank" rel="noopener" class="mt-6 inline-flex items-center gap-2 font-bold text-cyan-300 transition hover:gap-3 hover:text-white">Consultar por esto <span aria-hidden="true">→</span></a>
       </article>
-      <article class="rounded-2xl border border-line bg-card p-6">
-        <span class="font-mono text-sm text-brand">03</span>
-        <h3 class="mt-3 text-lg font-bold text-white">Infraestructura propia y datos seguros</h3>
-        <p class="mt-3 text-mut">Tus bases de datos, tus comprobantes y tus clientes corren en servidores privados aislados, con copias de seguridad reales y documentadas. El sistema es tuyo.</p>
+      <!-- 3 -->
+      <article class="reveal glass card flex flex-col rounded-3xl p-7 sm:p-8" style="--d:0s">
+        <div class="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-cyan to-violet shadow-lg shadow-cyan/30">
+          <svg class="h-7 w-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="m9 15 2 2 4-4"/></svg>
+        </div>
+        <h3 class="t-card mt-6 font-bold text-white">Sistemas de Turnos, Clientes y Caja</h3>
+        <p class="mt-3 flex-1 text-slate-400">Olvidate del cuaderno y los Excel eternos. Organizá tu agenda, mandá recordatorios automáticos a tus clientes y cerrá la caja en un clic.</p>
+        <a data-wa="sol3" href="#" target="_blank" rel="noopener" class="mt-6 inline-flex items-center gap-2 font-bold text-cyan-300 transition hover:gap-3 hover:text-white">Consultar por esto <span aria-hidden="true">→</span></a>
+      </article>
+      <!-- 4 -->
+      <article class="reveal glass card flex flex-col rounded-3xl p-7 sm:p-8" style="--d:.08s">
+        <div class="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-emerald-500 to-cyan shadow-lg shadow-emerald-500/30">
+          <svg class="h-7 w-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12Z"/><path d="m12.5 7.5-2.5 4.5h4l-2.5 4.5"/></svg>
+        </div>
+        <h3 class="t-card mt-6 font-bold text-white">Asistentes y Automatización en WhatsApp</h3>
+        <p class="mt-3 flex-1 text-slate-400">Respuestas al instante las 24 horas, recepción automática de comprobantes y avisos inteligentes para no perder ninguna venta.</p>
+        <a data-wa="sol4" href="#" target="_blank" rel="noopener" class="mt-6 inline-flex items-center gap-2 font-bold text-cyan-300 transition hover:gap-3 hover:text-white">Consultar por esto <span aria-hidden="true">→</span></a>
       </article>
     </div>
+  </div>
+</section>
 
-    <!-- fundador + stack -->
-    <div class="mt-6 grid gap-6 rounded-2xl border border-line bg-card p-6 sm:p-8 lg:grid-cols-[1fr_1.4fr]">
-      <div class="flex items-start gap-4">
-        <div class="relative grid h-16 w-16 flex-none place-items-center rounded-xl border border-line2 bg-card2 font-mono text-xl font-bold text-brand">BV<span class="absolute -bottom-1 -right-1 h-4 w-4 rounded-full border-[3px] border-card bg-ok"></span></div>
-        <div>
-          <p class="text-lg font-bold text-white">Braulio Veron</p>
-          <p class="text-sm text-brand-hi">Fundador y desarrollador principal</p>
-          <p class="mt-3 text-sm text-mut">Desde Misiones, para toda Argentina. Cada sistema de esta página lo diseñé, lo programé y lo mantengo funcionando.</p>
+<!-- ===================== PROYECTOS ===================== -->
+<section id="proyectos" class="scroll-mt-24 py-20 sm:py-28">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="reveal max-w-2xl">
+      <p class="text-sm font-bold uppercase tracking-[.2em] text-cyan-300">Proyectos</p>
+      <h2 class="t-sec mt-3 font-extrabold text-white">Proyectos reales funcionando</h2>
+      <p class="t-lead mt-4 text-slate-400">No son maquetas. Son negocios que hoy trabajan con lo que armamos.</p>
+    </div>
+
+    <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <!-- Farmako -->
+      <article class="reveal glass card flex flex-col rounded-3xl p-3" style="--d:0s">
+        <div class="pv bg-gradient-to-br from-cyan/30 via-cobalt/25 to-night2" aria-hidden="true">
+          <div class="absolute inset-x-6 top-6 rounded-2xl border border-white/15 bg-night/70 p-4 backdrop-blur">
+            <div class="flex items-center gap-2"><span class="block h-6 flex-1 rounded-lg bg-white/10"></span><span class="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2 py-1 text-[10px] font-semibold text-emerald-300">🏥 De turno hoy</span></div>
+            <div class="mt-3 flex flex-wrap gap-1.5 text-[11px] font-semibold text-white">
+              <span class="flex items-center gap-1 rounded-full bg-white/10 px-2 py-1"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>Central</span>
+              <span class="flex items-center gap-1 rounded-full bg-white/10 px-2 py-1"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>Libertad</span>
+              <span class="flex items-center gap-1 rounded-full bg-white/10 px-2 py-1"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>Farmavida</span>
+            </div>
+            <div class="mt-3 grid grid-cols-3 gap-2"><span class="h-10 rounded-lg bg-gradient-to-br from-cyan/50 to-cobalt/50"></span><span class="h-10 rounded-lg bg-gradient-to-br from-cobalt/50 to-violet/40"></span><span class="h-10 rounded-lg bg-gradient-to-br from-cyan/40 to-violet/40"></span></div>
+          </div>
+          <div class="float absolute bottom-4 right-4 rounded-2xl rounded-br-sm bg-[#005C4B] px-3 py-2 text-xs font-semibold text-white shadow-lg">🛒 Pedido listo para Libertad ✓</div>
         </div>
+        <div class="flex flex-1 flex-col p-4 pt-6">
+          <p class="text-xs font-bold uppercase tracking-[.16em] text-cyan-300">Salud & Comercios</p>
+          <h3 class="t-card mt-2 font-bold text-white">Red Farmako</h3>
+          <p class="mt-1 font-semibold text-slate-200">Catálogo digital para red de 3 farmacias.</p>
+          <p class="mt-3 flex-1 text-slate-400">Unificamos el stock de las sucursales, las farmacias de turno y los pedidos directos al WhatsApp de cada mostrador.</p>
+          <a data-wa="pr1" href="#" target="_blank" rel="noopener" class="mt-5 inline-flex items-center gap-2 font-bold text-cyan-300 transition hover:gap-3 hover:text-white">Quiero algo así <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <!-- Mimar T -->
+      <article class="reveal glass card flex flex-col rounded-3xl p-3" style="--d:.1s">
+        <div class="pv bg-gradient-to-br from-violet/35 via-fuchsia-500/15 to-night2" aria-hidden="true">
+          <div class="absolute inset-x-6 top-6 rounded-2xl border border-white/15 bg-night/70 p-4 backdrop-blur">
+            <div class="flex items-center justify-between"><span class="h-2.5 w-1/3 rounded-full bg-white/70"></span><span class="h-2.5 w-10 rounded-full bg-white/20"></span></div>
+            <div class="mt-3 grid grid-cols-7 gap-1.5">
+              <span class="aspect-square rounded-md bg-white/10"></span><span class="aspect-square rounded-md bg-white/10"></span><span class="aspect-square rounded-md bg-violet/70"></span><span class="aspect-square rounded-md bg-white/10"></span><span class="aspect-square rounded-md bg-white/10"></span><span class="aspect-square rounded-md bg-cyan/60"></span><span class="aspect-square rounded-md bg-white/10"></span>
+              <span class="aspect-square rounded-md bg-white/10"></span><span class="aspect-square rounded-md bg-violet/70"></span><span class="aspect-square rounded-md bg-white/10"></span><span class="aspect-square rounded-md bg-white/10"></span><span class="aspect-square rounded-md bg-gradient-to-br from-fuchsia-400 to-violet ring-2 ring-white/70"></span><span class="aspect-square rounded-md bg-white/10"></span><span class="aspect-square rounded-md bg-white/10"></span>
+            </div>
+          </div>
+          <div class="float absolute bottom-4 left-4 right-4 flex items-center gap-2 rounded-2xl border border-white/15 bg-night/85 px-3 py-2.5 text-xs text-white shadow-lg backdrop-blur">
+            <span class="text-base">💆‍♀️</span><span class="flex-1 font-semibold">A Paula le toca su próxima sesión</span><span class="rounded-full bg-wa px-2 py-1 text-[10px] font-bold">Avisar</span>
+          </div>
+        </div>
+        <div class="flex flex-1 flex-col p-4 pt-6">
+          <p class="text-xs font-bold uppercase tracking-[.16em] text-violet-300">Estética & Consultorios</p>
+          <h3 class="t-card mt-2 font-bold text-white">Espacio Mimar T</h3>
+          <p class="mt-1 font-semibold text-slate-200">Agenda inteligente y seguimiento de clientes.</p>
+          <p class="mt-3 flex-1 text-slate-400">Un sistema simple que avisa automáticamente cuando a una clienta le toca su próxima sesión y deja las cuentas del día claras.</p>
+          <a data-wa="pr2" href="#" target="_blank" rel="noopener" class="mt-5 inline-flex items-center gap-2 font-bold text-violet-300 transition hover:gap-3 hover:text-white">Quiero algo así <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <!-- Melki -->
+      <article class="reveal glass card flex flex-col rounded-3xl p-3 md:col-span-2 lg:col-span-1" style="--d:.2s">
+        <div class="pv bg-gradient-to-br from-cobalt/35 via-violet/20 to-night2" aria-hidden="true">
+          <div class="absolute left-1/2 top-6 w-[58%] max-w-[220px] -translate-x-1/2 -rotate-3 rounded-xl bg-slate-100 p-4 shadow-2xl">
+            <span class="block h-2 w-1/2 rounded-full bg-slate-400"></span>
+            <span class="mt-3 block text-lg font-extrabold text-slate-900">$ 125.000</span>
+            <span class="mt-2 block h-1.5 w-full rounded-full bg-slate-300"></span>
+            <span class="mt-1.5 block h-1.5 w-4/5 rounded-full bg-slate-300"></span>
+            <span class="mt-1.5 block h-1.5 w-3/5 rounded-full bg-slate-300"></span>
+            <div class="scan"></div>
+          </div>
+          <div class="float absolute bottom-4 left-4 rounded-full border border-emerald-400/30 bg-night/85 px-3 py-1.5 text-xs font-semibold text-emerald-300 backdrop-blur">✓ Comprobante leído</div>
+          <div class="float d2 absolute bottom-4 right-4 rounded-full border border-white/15 bg-night/85 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur">📄 Resumen listo</div>
+        </div>
+        <div class="flex flex-1 flex-col p-4 pt-6">
+          <p class="text-xs font-bold uppercase tracking-[.16em] text-blue-300">Finanzas & Administración</p>
+          <h3 class="t-card mt-2 font-bold text-white">Melki</h3>
+          <p class="mt-1 font-semibold text-slate-200">Control automático de cobros y cuentas.</p>
+          <p class="mt-3 flex-1 text-slate-400">Lectura inteligente de comprobantes por foto o PDF y resúmenes de cuenta en un clic, ahorrando horas de carga manual.</p>
+          <a data-wa="pr3" href="#" target="_blank" rel="noopener" class="mt-5 inline-flex items-center gap-2 font-bold text-blue-300 transition hover:gap-3 hover:text-white">Quiero algo así <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROCESO ===================== -->
+<section id="proceso" class="scroll-mt-24 py-20 sm:py-28">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="reveal max-w-2xl">
+      <p class="text-sm font-bold uppercase tracking-[.2em] text-cyan-300">Proceso</p>
+      <h2 class="t-sec mt-3 font-extrabold text-white">Cómo trabajamos</h2>
+      <p class="t-lead mt-4 text-slate-400">Cuatro pasos, sin vueltas y con contacto directo de principio a fin.</p>
+    </div>
+
+    <div id="steps" class="steps mt-14" role="list">
+      <span class="rail" aria-hidden="true"></span><span class="rail-fill" aria-hidden="true"></span>
+      <div role="listitem" class="step reveal" style="--d:0s">
+        <span class="num">01</span>
+        <h3 class="t-card font-bold text-white">Charla Inicial</h3>
+        <p class="mt-2 text-slate-400">Me contás por WhatsApp qué necesita tu negocio o qué tarea te está quitando tiempo.</p>
       </div>
-      <div class="grid gap-5 sm:grid-cols-3">
-        <div>
-          <p class="font-mono text-[11px] uppercase tracking-wider text-dim">Web y paneles</p>
-          <div class="mt-2 flex flex-wrap gap-1.5 text-xs">
-            <span class="rounded-md border border-line2 px-2 py-1 font-mono text-mut">Next.js</span><span class="rounded-md border border-line2 px-2 py-1 font-mono text-mut">React</span><span class="rounded-md border border-line2 px-2 py-1 font-mono text-mut">TypeScript</span><span class="rounded-md border border-line2 px-2 py-1 font-mono text-mut">Tailwind</span><span class="rounded-md border border-line2 px-2 py-1 font-mono text-mut">HTML5/CSS3</span>
-          </div>
-        </div>
-        <div>
-          <p class="font-mono text-[11px] uppercase tracking-wider text-dim">Backend y datos</p>
-          <div class="mt-2 flex flex-wrap gap-1.5 text-xs">
-            <span class="rounded-md border border-line2 px-2 py-1 font-mono text-mut">Node.js</span><span class="rounded-md border border-line2 px-2 py-1 font-mono text-mut">Python</span><span class="rounded-md border border-line2 px-2 py-1 font-mono text-mut">Firebase</span><span class="rounded-md border border-line2 px-2 py-1 font-mono text-mut">SQLite</span><span class="rounded-md border border-line2 px-2 py-1 font-mono text-mut">APIs</span>
-          </div>
-        </div>
-        <div>
-          <p class="font-mono text-[11px] uppercase tracking-wider text-dim">Automatización y servidores</p>
-          <div class="mt-2 flex flex-wrap gap-1.5 text-xs">
-            <span class="rounded-md border border-line2 px-2 py-1 font-mono text-mut">n8n</span><span class="rounded-md border border-line2 px-2 py-1 font-mono text-mut">WhatsApp API</span><span class="rounded-md border border-line2 px-2 py-1 font-mono text-mut">IA comprobantes</span><span class="rounded-md border border-line2 px-2 py-1 font-mono text-mut">Docker</span><span class="rounded-md border border-line2 px-2 py-1 font-mono text-mut">VPS</span>
-          </div>
-        </div>
+      <div role="listitem" class="step reveal" style="--d:.15s">
+        <span class="num">02</span>
+        <h3 class="t-card font-bold text-white">Propuesta Clara</h3>
+        <p class="mt-2 text-slate-400">Definimos qué vamos a armar, en cuánto tiempo está listo y el presupuesto exacto sin sorpresas.</p>
+      </div>
+      <div role="listitem" class="step reveal" style="--d:.3s">
+        <span class="num">03</span>
+        <h3 class="t-card font-bold text-white">Diseño y Armado</h3>
+        <p class="mt-2 text-slate-400">Construimos tu web o sistema mostrándote avances reales para que lo pruebes desde tu celular.</p>
+      </div>
+      <div role="listitem" class="step reveal" style="--d:.45s">
+        <span class="num">04</span>
+        <h3 class="t-card font-bold text-white">Lanzamiento y Acompañamiento</h3>
+        <p class="mt-2 text-slate-400">Lo dejamos funcionando y tenés contacto directo conmigo para cualquier cambio o mejora.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ======================= DIAGNÓSTICO ======================= -->
-<section id="diagnostico" class="scroll-mt-16 border-t border-line py-20">
-  <div class="mx-auto max-w-6xl px-4 sm:px-6">
-    <p class="font-mono text-xs uppercase tracking-[.18em] text-brand">Diagnóstico rápido</p>
-    <h2 class="mt-3 max-w-3xl text-3xl font-extrabold tracking-tight text-white sm:text-4xl">Contame qué te traba y te digo cómo lo resolvemos.</h2>
-    <p class="mt-4 max-w-2xl text-mut">Dos preguntas. Te mostramos la solución en pantalla y, si te sirve, me la mandás por WhatsApp tal cual.</p>
-
-    <div class="mt-10 grid overflow-hidden rounded-2xl border border-line2 bg-card lg:grid-cols-2">
-      <div class="space-y-8 border-b border-line p-6 sm:p-8 lg:border-b-0 lg:border-r">
-        <fieldset>
-          <legend class="text-sm font-semibold text-white">1. ¿Qué rubro tenés?</legend>
-          <div id="q-rubro" class="mt-3 grid gap-2"></div>
-        </fieldset>
-        <fieldset>
-          <legend class="text-sm font-semibold text-white">2. ¿Qué es lo que más tiempo te quita hoy?</legend>
-          <div id="q-prob" class="mt-3 grid gap-2"></div>
-        </fieldset>
-      </div>
-      <div class="flex flex-col bg-card2 p-6 sm:p-8" aria-live="polite">
-        <div id="diag-empty" class="flex flex-1 flex-col items-center justify-center text-center">
-          <div class="grid h-12 w-12 place-items-center rounded-xl border border-line2 font-mono text-brand">?</div>
-          <p class="mt-4 max-w-xs text-mut">Elegí tu rubro y lo que más tiempo te quita para ver cómo lo resolvemos.</p>
+<!-- ===================== CIERRE ===================== -->
+<section id="contacto" class="scroll-mt-24 pb-24 pt-10 sm:pb-32">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="reveal relative overflow-hidden rounded-[2rem] p-8 text-center sm:p-14">
+      <div class="absolute inset-0 bg-gradient-to-br from-cobalt via-violet to-cyan" aria-hidden="true"></div>
+      <div class="absolute inset-0 opacity-40" style="background:radial-gradient(circle at 20% 10%,rgba(255,255,255,.35),transparent 40%),radial-gradient(circle at 85% 90%,rgba(6,8,18,.6),transparent 50%)" aria-hidden="true"></div>
+      <div class="relative">
+        <h2 class="t-sec mx-auto max-w-3xl font-extrabold text-white">¿Listo para darle otra imagen y otro ritmo a tu negocio?</h2>
+        <p class="t-lead mx-auto mt-5 max-w-xl text-white/85">Escribime y en una charla corta vemos qué te conviene armar primero.</p>
+        <div class="mx-auto mt-9 flex max-w-md flex-col items-center gap-3">
+          <a data-wa="final" href="#" target="_blank" rel="noopener" class="btn w-full bg-white text-slate-900 shadow-xl shadow-black/30 transition hover:-translate-y-0.5">
+            <svg class="h-5 w-5 flex-none text-wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>
+            Escribime por WhatsApp
+          </a>
         </div>
-        <div id="diag-out" class="hidden flex-1 flex-col">
-          <p id="d-sys" class="font-mono text-xs uppercase tracking-wider text-brand-hi"></p>
-          <h3 id="d-title" class="mt-2 text-xl font-bold text-white"></h3>
-          <p id="d-text" class="mt-3 text-mut"></p>
-          <ul id="d-list" class="mt-4 space-y-2 text-[15px] text-gray-200"></ul>
-          <p id="d-case" class="mt-4 text-sm text-dim"></p>
-          <a id="d-wa" href="#" target="_blank" rel="noopener" class="mt-8 inline-flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-ok px-6 font-semibold text-[#04150F] hover:brightness-110">Enviar este diagnóstico a Braulio</a>
-          <p class="mt-2 text-center text-xs text-dim">Se abre tu WhatsApp con el mensaje escrito. Vos decidís si lo mandás.</p>
+        <div class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-3 text-left sm:grid-cols-2">
+          <div class="rounded-2xl border border-white/25 bg-white/10 p-4 backdrop-blur">
+            <p class="text-xs font-bold uppercase tracking-[.16em] text-white/70">Contacto</p>
+            <p class="mt-1 font-bold text-white">Braulio Veron — Bravex Systems</p>
+          </div>
+          <a data-wa="final" href="#" target="_blank" rel="noopener" class="rounded-2xl border border-white/25 bg-white/10 p-4 backdrop-blur transition hover:bg-white/15">
+            <p class="text-xs font-bold uppercase tracking-[.16em] text-white/70">WhatsApp directo</p>
+            <p class="mt-1 font-bold text-white">+54 9 3757 67-1229</p>
+          </a>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ======================= FAQ ======================= -->
-<section id="faq" class="scroll-mt-16 border-t border-line py-20">
-  <div class="mx-auto max-w-3xl px-4 sm:px-6">
-    <p class="font-mono text-xs uppercase tracking-[.18em] text-brand">Preguntas reales</p>
-    <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">Lo que me preguntan siempre, contestado sin vueltas.</h2>
-    <div class="mt-10 divide-y divide-line overflow-hidden rounded-2xl border border-line bg-card">
-      <details class="group p-5 sm:p-6" open>
-        <summary class="flex cursor-pointer items-center justify-between gap-4 font-semibold text-white">¿Cuánto tarda en estar funcionando?<span class="chev font-mono text-xl text-brand transition">+</span></summary>
-        <p class="mt-3 text-mut">Arrancamos por el problema más urgente, en etapas cortas, para que lo uses rápido. Los demás módulos se suman sobre la marcha, con el sistema ya funcionando.</p>
-      </details>
-      <details class="group p-5 sm:p-6">
-        <summary class="flex cursor-pointer items-center justify-between gap-4 font-semibold text-white">¿Qué pasa si mañana necesito cambiar algo en el panel o en el bot?<span class="chev font-mono text-xl text-brand transition">+</span></summary>
-        <p class="mt-3 text-mut">Me escribís directo al WhatsApp y lo ajustamos. Sin tickets ni intermediarios: hablás con quien escribió el código.</p>
-      </details>
-      <details class="group p-5 sm:p-6">
-        <summary class="flex cursor-pointer items-center justify-between gap-4 font-semibold text-white">¿Tengo que pagar comisiones por cada venta o turno?<span class="chev font-mono text-xl text-brand transition">+</span></summary>
-        <p class="mt-3 text-mut">No. Cero comisiones por transacción. El sistema trabaja para vos, no se lleva un porcentaje de lo que vendés.</p>
-      </details>
-      <details class="group p-5 sm:p-6">
-        <summary class="flex cursor-pointer items-center justify-between gap-4 font-semibold text-white">¿Tengo que dejar el sistema que ya uso en el mostrador?<span class="chev font-mono text-xl text-brand transition">+</span></summary>
-        <p class="mt-3 text-mut">No necesariamente. Si ya trabajás con un sistema de facturación (como Plex) o con planillas propias, lo conectamos a lo nuevo. Así lo hicimos con las farmacias.</p>
-      </details>
-      <details class="group p-5 sm:p-6">
-        <summary class="flex cursor-pointer items-center justify-between gap-4 font-semibold text-white">¿Dónde quedan mis datos?<span class="chev font-mono text-xl text-brand transition">+</span></summary>
-        <p class="mt-3 text-mut">En un servidor privado y aislado, con copias de seguridad reales y documentadas. Tus clientes, tus comprobantes y tu información son tuyos.</p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- ======================= CTA FINAL ======================= -->
-<section class="border-t border-line py-20">
-  <div class="mx-auto max-w-3xl px-4 text-center sm:px-6">
-    <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">¿Querés verlo funcionando con tu negocio en mente?</h2>
-    <p class="mt-4 text-mut">Escribime, contame cómo trabajás hoy y te muestro qué parte de esto te sirve.</p>
-    <a data-wa="final" href="#" target="_blank" rel="noopener" class="mt-8 inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-ok px-6 font-semibold text-[#04150F] hover:brightness-110">Escribir a Braulio · +54 9 3757 67-1229</a>
   </div>
 </section>
 </main>
 
-<!-- ======================= FOOTER ======================= -->
-<footer class="border-t border-line py-10">
-  <div class="mx-auto flex max-w-6xl flex-col gap-6 px-4 sm:px-6 md:flex-row md:items-end md:justify-between">
-    <div>
-      <p class="flex items-baseline gap-1.5"><span class="font-extrabold text-white">BRAVEX</span><span class="font-mono text-[10px] tracking-[.22em] text-brand">SYSTEMS</span></p>
-      <p class="mt-2 text-sm text-mut">Desarrollo de Software, Paneles de Gestión y Automatización Operativa.</p>
-      <p class="mt-1 text-sm text-dim">Misiones, Argentina · Trabajamos con todo el país.</p>
+<!-- ===================== FOOTER ===================== -->
+<footer class="border-t border-white/10 pb-28 pt-10">
+  <div class="mx-auto flex max-w-6xl flex-col gap-4 px-5 sm:flex-row sm:items-center sm:justify-between">
+    <div class="flex items-center gap-2.5">
+      <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="url(#lg)"/><path d="M10 9l7 7-7 7" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 9l7 7-7 7" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="text-sm text-slate-400"><b class="font-extrabold text-white">BRAVEX</b> <span class="text-cyan-300">SYSTEMS</span> · Diseño Web, Sistemas y Automatización</span>
     </div>
-    <div class="text-sm md:text-right">
-      <p class="text-mut">Contacto directo: <span class="text-white">Braulio Veron</span></p>
-      <a data-wa="footer" href="#" target="_blank" rel="noopener" class="mt-1 inline-block font-mono text-ok hover:underline">WhatsApp: +54 9 3757 67-1229</a>
-      <p class="mt-3 font-mono text-xs text-dim">© <span id="yr">2026</span> Bravex Systems</p>
-    </div>
+    <p class="text-sm text-slate-500">Misiones, Argentina · © <span id="yr">2026</span></p>
   </div>
 </footer>
+
+<!-- WhatsApp flotante -->
+<a data-wa="float" href="#" target="_blank" rel="noopener" class="wa-float" aria-label="Escribir por WhatsApp a Braulio">
+  <svg class="relative h-8 w-8" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>
+</a>
 
 <script>
 (() => {
   'use strict';
+  const $ = (s, el = document) => el.querySelector(s);
+  const $$ = (s, el = document) => [...el.querySelectorAll(s)];
 
-  /* ================== WHATSAPP ================== */
-  const WA = '5493757671229';
-  const wa = (text) => `https://wa.me/${WA}?text=${encodeURIComponent(text)}`;
+  /* ---------- WhatsApp ---------- */
+  const WA = 'https://wa.me/5493757671229';
   const MSG = {
-    nav:    'Hola Braulio, vi la web de Bravex Systems y quiero consultar por un sistema.',
-    hero:   'Hola Braulio, vi la web de Bravex Systems y quiero consultar por un sistema para mi negocio.',
-    s1:     'Hola Braulio, vi en la web de Bravex Systems el sistema de cuentas corrientes con lectura de comprobantes por IA (caso Melki). Quiero algo así para mi negocio.',
-    s2:     'Hola Braulio, vi en la web de Bravex Systems el catálogo multi-sucursal conectado al mostrador (caso Red Farmako). Quiero algo así para mi negocio.',
-    s3:     'Hola Braulio, vi en la web de Bravex Systems el sistema de turnos, seguimiento de pacientes y caja diaria (caso Espacio Mimar T). Quiero algo así para mi negocio.',
-    s4:     'Hola Braulio, vi en la web de Bravex Systems el sistema de pedidos y reservas por fecha. Quiero algo así para mi negocio.',
-    final:  'Hola Braulio, vi la web de Bravex Systems. Te cuento cómo trabajamos hoy en mi negocio:',
-    footer: 'Hola Braulio, vi la web de Bravex Systems y quiero hacerte una consulta.'
+    nav:   'Hola Braulio, vi la web de Bravex Systems y quiero hacerte una consulta',
+    hero:  null,
+    sol1:  'Hola Braulio, vi la web de Bravex Systems y quiero consultar por Diseño Web & Landing Pages.',
+    sol2:  'Hola Braulio, vi la web de Bravex Systems y quiero consultar por una Tienda Online / Catálogo.',
+    sol3:  'Hola Braulio, vi la web de Bravex Systems y quiero consultar por un Sistema de Turnos, Clientes y Caja.',
+    sol4:  'Hola Braulio, vi la web de Bravex Systems y quiero consultar por Automatización en WhatsApp.',
+    pr1:   'Hola Braulio, vi el proyecto de Red Farmako en tu web y quiero algo así para mi negocio.',
+    pr2:   'Hola Braulio, vi el proyecto de Espacio Mimar T en tu web y quiero algo así para mi negocio.',
+    pr3:   'Hola Braulio, vi el proyecto de Melki en tu web y quiero algo así para mi negocio.',
+    final: 'Hola Braulio, quiero darle otra imagen y otro ritmo a mi negocio. ¿Hablamos?',
+    float: 'Hola Braulio, vi la web de Bravex Systems y quiero hacerte una consulta'
   };
-  document.querySelectorAll('[data-wa]').forEach(a => { a.href = wa(MSG[a.dataset.wa] || MSG.nav); });
-
-  const $ = (s) => document.querySelector(s);
-  const $$ = (s) => [...document.querySelectorAll(s)];
-  const esc = (s) => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const money = (n) => '$ ' + new Intl.NumberFormat('es-AR').format(n);
-
+  $$('[data-wa]').forEach(a => {
+    const m = MSG[a.dataset.wa];
+    a.href = m ? `${WA}?text=${encodeURIComponent(m)}` : WA;
+  });
   $('#yr').textContent = new Date().getFullYear();
 
-  /* ================== MENÚ MOBILE ================== */
-  const menuBtn = $('#menu-btn'), menu = $('#menu');
-  menuBtn.addEventListener('click', () => {
-    const open = menu.classList.toggle('hidden') === false;
-    menuBtn.setAttribute('aria-expanded', open);
-  });
-  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { menu.classList.add('hidden'); menuBtn.setAttribute('aria-expanded', 'false'); }));
+  /* ---------- Menú móvil ---------- */
+  const burger = $('#burger'), menu = $('#mmenu');
+  const setMenu = (open) => { menu.classList.toggle('open', open); burger.setAttribute('aria-expanded', open); burger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú'); };
+  burger.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+  $$('a', menu).forEach(a => a.addEventListener('click', () => setMenu(false)));
+  addEventListener('resize', () => { if (innerWidth >= 768) setMenu(false); });
 
-  /* ================== PESTAÑAS ================== */
-  const tabs = $$('.tab');
-  function showTab(n) {
-    tabs.forEach(t => t.setAttribute('aria-selected', t.dataset.tab === n));
-    $$('.panel').forEach(p => {
-      const on = p.id === 'p' + n;
-      p.classList.toggle('hidden', !on);
-      p.classList.toggle('grid', on);
+  /* ---------- Scroll reveal ---------- */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.14, rootMargin: '0px 0px -40px 0px' });
+  $$('.reveal').forEach(el => io.observe(el));
+
+  const steps = $('#steps');
+  new IntersectionObserver((en, ob) => { if (en[0].isIntersecting) { steps.classList.add('in'); ob.disconnect(); } }, { threshold: 0.3 }).observe(steps);
+  $$('.step', steps).forEach((s, i) => s.querySelector('.num').style.setProperty('--d', (0.35 + i * 0.35) + 's'));
+
+  /* ---------- Contadores ---------- */
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const countIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target, to = +el.dataset.to;
+      countIO.unobserve(el);
+      if (reduce) { el.textContent = to; return; }
+      const t0 = performance.now(), dur = 1400;
+      const tick = (t) => {
+        const p = Math.min(1, (t - t0) / dur);
+        el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3)));
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
     });
-  }
-  tabs.forEach(t => t.addEventListener('click', () => showTab(t.dataset.tab)));
-  document.querySelector('[role=tablist]').addEventListener('keydown', e => {
-    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
-    const i = tabs.findIndex(t => t.getAttribute('aria-selected') === 'true');
-    const n = tabs[(i + (e.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length];
-    n.focus(); showTab(n.dataset.tab);
-  });
+  }, { threshold: 0.6 });
+  $$('.count').forEach(el => countIO.observe(el));
 
-  /* ================== MOCKUP 1: COMPROBANTES ================== */
-  const POOL = [
-    { monto: 380000, banco: 'Banco ••• 2290', id: '000982104' },
-    { monto: 725500, banco: 'Billetera ••• 8812', id: '000982351' },
-    { monto: 1540000, banco: 'Banco ••• 0613', id: '000982790' },
-    { monto: 96000, banco: 'Banco ••• 4471', id: '000983015' }
-  ];
-  let poolI = 0, balTr = 3875500, simBusy = false;
-  const STATES = [
-    ['Recibido', 'bg-warn-soft text-warn'],
-    ['Asignado', 'bg-brand-soft text-brand-hi'],
-    ['Confirmado', 'bg-ok-soft text-ok']
-  ];
-  $('#sim-btn').addEventListener('click', () => {
-    if (simBusy) return;
-    simBusy = true;
-    const v = POOL[poolI++ % POOL.length];
-    const now = new Date();
-    const hh = String(now.getHours()).padStart(2, '0') + ':' + String(now.getMinutes()).padStart(2, '0');
-    const row = document.createElement('div');
-    row.className = 'row-in flex flex-wrap items-center gap-x-3 gap-y-1 rounded-lg border border-brand/40 bg-card2 px-3 py-2.5';
-    row.innerHTML = `<span class="font-mono text-xs text-dim">${hh}</span><span class="font-mono text-sm text-white">${money(v.monto)}</span><span class="font-mono text-xs text-dim">ID ${v.id}</span><span class="state ml-auto rounded-full px-2 py-0.5 font-mono text-[11px]"></span>`;
-    const box = $('#vouchers');
-    box.prepend(row);
-    while (box.children.length > 4) box.lastElementChild.remove();
-    const pill = row.querySelector('.state');
-    const ai = { st: $('#ai-state'), m: $('#ai-monto'), f: $('#ai-fecha'), b: $('#ai-banco'), i: $('#ai-id') };
-    const set = (k) => { pill.textContent = STATES[k][0]; pill.className = 'state ml-auto rounded-full px-2 py-0.5 font-mono text-[11px] ' + STATES[k][1]; };
-    set(0);
-    ai.st.textContent = 'Leyendo…'; ai.st.className = 'rounded-full bg-warn-soft px-2 py-0.5 font-mono text-[11px] text-warn';
-    [ai.m, ai.f, ai.b, ai.i].forEach(el => el.textContent = '···');
-    setTimeout(() => {
-      ai.m.textContent = money(v.monto) + ',00';
-      ai.f.textContent = now.toLocaleDateString('es-AR', { day: '2-digit', month: '2-digit' }) + ' ' + hh;
-      ai.b.textContent = v.banco;
-      ai.i.textContent = v.id + ' · único';
-      ai.st.textContent = '✓ Verificado'; ai.st.className = 'rounded-full bg-ok-soft px-2 py-0.5 font-mono text-[11px] text-ok';
-      set(1);
-    }, 900);
-    setTimeout(() => {
-      set(2);
-      row.classList.replace('border-brand/40', 'border-line');
-      balTr += v.monto;
-      const b = $('#bal-tr');
-      b.textContent = money(balTr);
-      b.classList.add('text-ok');
-      setTimeout(() => b.classList.remove('text-ok'), 1200);
-      simBusy = false;
-    }, 1900);
-  });
-  $('#pdf-btn').addEventListener('click', (e) => {
-    const b = e.currentTarget;
-    b.textContent = 'Generando…';
-    setTimeout(() => { b.textContent = '✓ PDF listo para enviar'; b.classList.replace('bg-white', 'bg-ok'); }, 700);
-    setTimeout(() => { b.textContent = 'Generar resumen PDF'; b.classList.replace('bg-ok', 'bg-white'); }, 3200);
-  });
-
-  /* ================== MOCKUP 2: CATÁLOGO ================== */
-  const PRODUCTS = [
-    { n: 'Ibuprofeno 400 mg x 20', p: 4850, s: [1, 1, 0] },
-    { n: 'Protector solar FPS 50 200 ml', p: 21900, s: [1, 0, 1] },
-    { n: 'Pañales talle G x 36', p: 18700, s: [1, 1, 1] },
-    { n: 'Alcohol en gel 250 ml', p: 3200, s: [0, 1, 1] },
-    { n: 'Termómetro digital', p: 9600, s: [1, 1, 0] },
-    { n: 'Crema hidratante facial 50 g', p: 15400, s: [0, 0, 1] }
-  ];
-  const BRANCHES = ['Farmacia Central', 'Farmacia Libertad', 'Farmavida'];
-  const cart = new Map();
-  const mark = (ok) => ok ? '<span class="text-ok">●</span>' : '<span class="text-line2">○</span>';
-  function renderCatalog() {
-    const q = $('#cat-search').value.trim().toLowerCase();
-    const list = PRODUCTS.map((p, i) => ({ ...p, i })).filter(p => p.n.toLowerCase().includes(q));
-    $('#cat-list').innerHTML = list.length ? list.map(p => `
-      <div class="grid grid-cols-[1fr_auto] items-center gap-2 rounded-lg border border-line bg-card2 px-3 py-2 sm:grid-cols-[1fr_repeat(3,64px)_auto]">
-        <div><p class="text-sm text-white">${esc(p.n)}</p><p class="font-mono text-xs text-mut">${money(p.p)} <span class="sm:hidden">· ${p.s.map((x, k) => x ? BRANCHES[k].replace('Farmacia ', '') : '').filter(Boolean).join(', ')}</span></p></div>
-        ${p.s.map(x => `<span class="hidden text-center sm:block">${mark(x)}</span>`).join('')}
-        <button data-add="${p.i}" class="h-8 w-8 rounded-md border border-line2 font-mono text-white hover:border-brand" aria-label="Agregar ${esc(p.n)}">${cart.has(p.i) ? cart.get(p.i) : '+'}</button>
-      </div>`).join('') : '<p class="px-3 py-4 text-sm text-dim">Sin resultados.</p>';
-  }
-  function renderCart() {
-    const branch = $('#cart-branch').value;
-    const bi = BRANCHES.indexOf(branch);
-    $('#wa-branch').textContent = branch.toUpperCase();
-    let total = 0, count = 0;
-    const lines = [];
-    cart.forEach((q, i) => {
-      const p = PRODUCTS[i];
-      total += p.p * q; count += q;
-      lines.push(`${q} x ${p.n}${p.s[bi] ? '' : ' ⚠ sin stock en este local'}`);
+  /* ---------- Glow que sigue al mouse + toque en móvil ---------- */
+  $$('.card').forEach(c => {
+    c.addEventListener('pointermove', (e) => {
+      const r = c.getBoundingClientRect();
+      c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      c.style.setProperty('--my', (e.clientY - r.top) + 'px');
     });
-    $('#cart-count').textContent = `(${count})`;
-    $('#cart-preview').textContent = count
-      ? `🛒 Pedido web · ${branch}\n${lines.join('\n')}\nTotal: ${money(total)}\nRetira / envío: a coordinar`
-      : 'Agregá productos con “+” para ver cómo llega el pedido.';
-  }
-  $('#cat-list').addEventListener('click', e => {
-    const b = e.target.closest('[data-add]');
-    if (!b) return;
-    const i = +b.dataset.add;
-    cart.set(i, (cart.get(i) || 0) + 1);
-    renderCatalog(); renderCart();
+    c.addEventListener('touchstart', (e) => {
+      $$('.card.touch').forEach(x => x !== c && x.classList.remove('touch'));
+      const t = e.touches[0], r = c.getBoundingClientRect();
+      c.style.setProperty('--mx', (t.clientX - r.left) + 'px');
+      c.style.setProperty('--my', (t.clientY - r.top) + 'px');
+      c.classList.add('touch');
+    }, { passive: true });
   });
-  $('#cat-search').addEventListener('input', renderCatalog);
-  $('#cart-branch').addEventListener('change', renderCart);
-  renderCatalog(); renderCart();
-
-  /* ================== MOCKUP 3: AGENDA ================== */
-  const AGENDA = [
-    { h: '09:00', n: 'Paula G.', t: 'Limpieza facial profunda', pro: 'Lic. Sofía', last: '19/10', lastT: 'Limpieza facial · 1ª sesión', note: 'Piel mixta. Sensibilidad en mejillas. Repetir a los 15–20 días.', voice: true },
-    { h: '10:30', n: 'Martina R.', t: 'Depilación láser · axilas', pro: 'Lic. Carla', last: '08/10', lastT: 'Depilación láser · 3ª sesión', note: 'Fototipo III. Potencia sin cambios.', voice: false },
-    { h: '12:00', n: 'Lucía F.', t: 'Peeling químico suave', pro: 'Lic. Sofía', last: '22/10', lastT: 'Consulta inicial', note: 'Manchas leves. Usa protector diario.', voice: true },
-    { h: '16:00', n: 'Rocío M.', t: 'Masaje descontracturante', pro: 'Lic. Carla', last: '30/09', lastT: 'Masaje descontracturante', note: 'Contractura cervical. Pidió turno quincenal.', voice: false }
-  ];
-  let agSel = 0;
-  function renderAgenda() {
-    $('#agenda').innerHTML = AGENDA.map((a, i) => `
-      <button data-ag="${i}" class="flex w-full items-center gap-3 rounded-lg border px-3 py-2 text-left transition ${i === agSel ? 'border-brand bg-brand-soft' : 'border-line bg-card2 hover:border-line2'}">
-        <span class="font-mono text-xs text-dim">${a.h}</span>
-        <span class="min-w-0"><span class="block truncate text-sm text-white">${esc(a.n)}</span><span class="block truncate text-xs text-mut">${esc(a.t)}</span></span>
-      </button>`).join('');
-    const a = AGENDA[agSel];
-    $('#history').innerHTML = `
-      <p class="font-mono text-[10px] tracking-wider text-brand-hi">HISTORIAL · ${esc(a.n.toUpperCase())}</p>
-      <p class="mt-2 text-sm text-white">${esc(a.t)}</p>
-      <p class="text-xs text-mut">${esc(a.pro)} · hoy ${a.h}</p>
-      <div class="mt-3 border-t border-brand/20 pt-3">
-        <p class="font-mono text-[10px] tracking-wider text-dim">ÚLTIMA VISITA · ${a.last}</p>
-        <p class="mt-1 text-sm text-gray-200">${esc(a.lastT)}</p>
-        <p class="mt-2 text-xs leading-relaxed text-mut">${a.voice ? '🎙️ ' : ''}${esc(a.note)}</p>
-      </div>`;
-  }
-  $('#agenda').addEventListener('click', e => {
-    const b = e.target.closest('[data-ag]');
-    if (b) { agSel = +b.dataset.ag; renderAgenda(); }
-  });
-  renderAgenda();
-  $('#remind-btn').addEventListener('click', (e) => {
-    e.currentTarget.textContent = '✓ Listo en WhatsApp';
-    e.currentTarget.disabled = true;
-    e.currentTarget.classList.add('opacity-70');
-    $('#remind-msg').textContent = '“Hola Paula, ya pasaron 18 días de tu limpieza facial. ¿Te reservo la segunda sesión esta semana?”';
-  });
-
-  /* ================== MOCKUP 4: PEDIDOS + CALENDARIO ================== */
-  const ORDERS = [
-    { id: 134, d: '2 hamburguesas completas + papas', st: 'Nuevo', c: 'bg-warn-soft text-warn', t: '20:41' },
-    { id: 133, d: '1 pizza muzzarella + 1 gaseosa 1,5 L', st: 'En preparación', c: 'bg-brand-soft text-brand-hi', t: '20:33' },
-    { id: 132, d: '3 empanadas de carne + 1 lomito', st: 'Listo para retirar', c: 'bg-ok-soft text-ok', t: '20:18' }
-  ];
-  $('#orders').innerHTML = ORDERS.map(o => `
-    <div class="flex flex-wrap items-center gap-x-3 gap-y-1 rounded-lg border border-line bg-card2 px-3 py-2.5">
-      <span class="font-mono text-xs text-dim">#${o.id} · ${o.t}</span>
-      <span class="text-sm text-white">${esc(o.d)}</span>
-      <span class="ml-auto rounded-full px-2 py-0.5 font-mono text-[11px] ${o.c}">${o.st}</span>
-    </div>`).join('');
-
-  const DOW = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
-  const today = new Date();
-  const days = Array.from({ length: 14 }, (_, i) => { const d = new Date(today); d.setDate(today.getDate() + i); return d; });
-  const booked = new Set([1, 4, 5, 11, 12]);
-  function renderCal() {
-    $('#calendar').innerHTML = days.map((d, i) => {
-      const b = booked.has(i);
-      return `<button data-day="${i}" ${b ? 'aria-disabled="true"' : ''} class="flex flex-col items-center rounded-md border py-1.5 transition ${b ? 'cursor-not-allowed border-brand/50 bg-brand-soft' : 'border-ok/40 bg-ok-soft hover:border-ok'}" aria-label="${d.toLocaleDateString('es-AR')} ${b ? 'reservado' : 'libre'}">
-        <span class="font-mono text-[9px] text-dim">${DOW[d.getDay()]}</span>
-        <span class="font-mono text-sm ${b ? 'text-brand-hi' : 'text-ok'}">${d.getDate()}</span>
-      </button>`;
-    }).join('');
-  }
-  $('#calendar').addEventListener('click', e => {
-    const b = e.target.closest('[data-day]');
-    if (!b) return;
-    const i = +b.dataset.day;
-    const d = days[i].toLocaleDateString('es-AR', { weekday: 'long', day: 'numeric', month: 'long' });
-    if (booked.has(i)) {
-      $('#cal-msg').innerHTML = `<span class="text-warn">Ese día ya está reservado.</span> El sistema no deja tomar dos reservas del mismo equipo para la misma fecha.`;
-      return;
-    }
-    booked.add(i); renderCal();
-    $('#cal-msg').innerHTML = `<span class="text-ok">✓ Reservado para el ${d}.</span> Seña cobrada y la fecha queda bloqueada para otros clientes.`;
-  });
-  renderCal();
-
-  /* ================== DIAGNÓSTICO ================== */
-  const RUBROS = [
-    { k: 'com', l: 'Comercio / Farmacia / Distribuidora' },
-    { k: 'con', l: 'Consultorio / Estética / Servicios' },
-    { k: 'fin', l: 'Financiera / Administración / Cobranzas' },
-    { k: 'gas', l: 'Gastronomía / Alquileres' }
-  ];
-  const PROBS = [
-    { k: 'trf', l: 'Controlar transferencias y cuentas corrientes' },
-    { k: 'wsp', l: 'Atender WhatsApp y pasar precios/stock' },
-    { k: 'tur', l: 'Recordar turnos y cerrar la caja del día' },
-    { k: 'otr', l: 'Otro proceso manual' }
-  ];
-  const SYS = {
-    1: { name: 'Sistema 1 · Cuentas y Comprobantes IA', caso: 'Melki',
-         title: 'Cuentas corrientes con lectura automática de comprobantes',
-         list: ['La IA lee cada foto o PDF de transferencia: monto, fecha, banco, destinatario e ID.', 'Avisa si un comprobante está duplicado antes de acreditarlo.', 'Estados Recibido → Asignado → Confirmado: nada impacta dos veces en la caja.', 'Resumen de cuenta en PDF con un clic.'] },
-    2: { name: 'Sistema 2 · Multi-Sucursal & POS', caso: 'Red Farmako',
-         title: 'Catálogo online conectado a tu stock real',
-         list: ['Tus productos y precios salen de tu sistema de mostrador: no cargás nada dos veces.', 'El cliente consulta solo y arma el pedido en la web.', 'El carrito llega armado a tu WhatsApp (o al de cada sucursal), listo para cobrar.', 'Panel con PIN para administrar.'] },
-    3: { name: 'Sistema 3 · Turnos, Seguimiento y Caja', caso: 'Espacio Mimar T / Distrito Barber',
-         title: 'Agenda con historial, avisos de seguimiento y cierre de caja',
-         list: ['Tocás un turno y ves qué se hizo la persona la última vez.', 'Alerta automática a los 15 o 20 días para escribirle y agendar la próxima sesión.', 'Porcentajes por profesional calculados solos.', 'Cierre de caja diario detallado.'] },
-    4: { name: 'Sistema 4 · Pedidos y Reservas', caso: 'Central Variedades / Dridanna',
-         title: 'Pedidos y reservas ordenados, sin comisiones',
-         list: ['Los pedidos entran ordenados y con estado, no perdidos en el chat.', 'Reservas por fecha y horario sin superposiciones.', 'Cobros integrados.', 'Cero comisión por venta a plataformas externas.'] }
-  };
-  const TEXT = {
-    trf: 'Dejás de anotar pagos a mano o en Excel. Cada transferencia que entra se lee, se controla y se asigna a la cuenta que corresponde.',
-    wsp: 'La gente deja de preguntarte todo por WhatsApp: ve precios y stock en la web y te manda el pedido ya armado.',
-    tur: 'Nadie se olvida de volver por falta de aviso, y al final del día la caja cierra con el detalle de cada profesional.',
-    otr: 'Lo primero es ver cómo lo hacés hoy. Arrancamos por la parte que más tiempo te quita y la automatizamos en una etapa corta.'
-  };
-  function pickSystem(r, p) {
-    if (p === 'trf') return 1;
-    if (p === 'wsp') return r === 'gas' ? 4 : 2;
-    if (p === 'tur') return 3;
-    return { com: 2, con: 3, fin: 1, gas: 4 }[r];
-  }
-  const diag = { r: null, p: null };
-  function optHTML(arr, group) {
-    return arr.map(o => `
-      <button type="button" class="opt flex items-center gap-3 rounded-lg border border-line bg-card2 px-4 py-3 text-left text-sm text-gray-200 transition hover:border-line2" data-g="${group}" data-k="${o.k}" aria-pressed="false">
-        <span class="opt-dot h-4 w-4 flex-none rounded-full border-2 border-line2"></span>${esc(o.l)}
-      </button>`).join('');
-  }
-  $('#q-rubro').innerHTML = optHTML(RUBROS, 'r');
-  $('#q-prob').innerHTML = optHTML(PROBS, 'p');
-  $$('.opt').forEach(b => b.addEventListener('click', () => {
-    const g = b.dataset.g;
-    diag[g] = b.dataset.k;
-    $$(`.opt[data-g="${g}"]`).forEach(x => x.setAttribute('aria-pressed', x === b));
-    renderDiag();
-  }));
-  function renderDiag() {
-    if (!diag.r || !diag.p) return;
-    const s = pickSystem(diag.r, diag.p);
-    const S = SYS[s];
-    const rL = RUBROS.find(x => x.k === diag.r).l;
-    const pL = PROBS.find(x => x.k === diag.p).l;
-    $('#diag-empty').classList.add('hidden');
-    const out = $('#diag-out');
-    out.classList.remove('hidden'); out.classList.add('flex');
-    $('#d-sys').textContent = 'Lo resolvemos con: ' + S.name;
-    $('#d-title').textContent = S.title;
-    $('#d-text').textContent = TEXT[diag.p];
-    $('#d-list').innerHTML = S.list.map(x => `<li class="flex gap-3"><span class="mt-0.5 text-ok">✓</span><span>${esc(x)}</span></li>`).join('');
-    $('#d-case').textContent = 'Ya funciona hoy en: ' + S.caso + '. Se adapta a tu forma de trabajar.';
-    $('#d-wa').href = wa(
-      `Hola Braulio, hice el diagnóstico en la web de Bravex Systems:\n` +
-      `• Rubro: ${rL}\n` +
-      `• Lo que más tiempo me quita: ${pL}\n` +
-      `• Solución sugerida: ${S.name}\n\n` +
-      `Quiero ver cómo se aplicaría en mi negocio.`
-    );
-  }
+  document.addEventListener('touchstart', (e) => { if (!e.target.closest('.card')) $$('.card.touch').forEach(x => x.classList.remove('touch')); }, { passive: true });
 })();
 </script>
 </body>
